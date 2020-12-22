@@ -1,0 +1,15 @@
+<svg id="x" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Combined_Shape" data-name="Combined Shape" d="M12.293,13.707,7,8.414,1.707,13.707A1,1,0,0,1,.293,12.293L5.586,7,.293,1.707A1,1,0,0,1,1.707.293L7,5.586,12.293.293a1,1,0,0,1,1.414,1.415L8.414,7l5.293,5.293a1,1,0,1,1-1.414,1.414Z" transform="translate(5 5)"/>
+    </clipPath>
+  </defs>
+  <g id="Grupo_47" data-name="Grupo 47">
+    <path id="Combined_Shape-2" data-name="Combined Shape" d="M12.293,13.707,7,8.414,1.707,13.707A1,1,0,0,1,.293,12.293L5.586,7,.293,1.707A1,1,0,0,1,1.707.293L7,5.586,12.293.293a1,1,0,0,1,1.414,1.415L8.414,7l5.293,5.293a1,1,0,1,1-1.414,1.414Z" transform="translate(5 5)"/>
+    <g id="Enmascarar_grupo_52" data-name="Enmascarar grupo 52" clip-path="url(#clip-path)">
+      <g id="COLOR_black" data-name="COLOR/ black">
+        <rect id="Rectangle" width="24" height="24" fill="#572ee5"/>
+      </g>
+    </g>
+  </g>
+</svg>

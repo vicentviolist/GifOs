@@ -1,0 +1,71 @@
+// Aquí esta la seccion para el HTML GRABAR
+@media only screen and (min-width: 768px) {
+  .grabar-b {
+    border: 2px solid #572ee5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 390px;
+    width: 640px;
+  }
+  .box-camera {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .camera {
+    position: absolute;
+    margin-top: 20px;
+    margin-left: -1020px;
+  }
+  .ligth {
+    position: absolute;
+    margin-top: 5px;
+  }
+  .btns {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  .btn {
+    margin: 5px;
+    margin-top: 10px;
+  }
+  .hrbox {
+    display: flex;
+    justify-content: center;
+  }
+  .hrbox hr {
+    color: #572ee5;
+    height: 5px;
+    width: 795.9px;
+    background-color: #572ee5;
+    margin-top: 10px;
+  }
+  .pelicula {
+    position: absolute;
+    margin-left: 1080px;
+    margin-top: -150px;
+  }
+  .comenzar-box {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    :hover {
+      cursor: pointer;
+    }
+  }
+  .btnComenzar {
+    font-family: "Montserrat", Bold;
+    font-size: 13px;
+    letter-spacing: 0;
+    text-align: center;
+    border: 1px solid #572ee5;
+    color: #572ee5;
+    background: none;
+    padding: 10px;
+    border-radius: 114px 114px 114px 114px;
+    outline: none;
+  }
+}

@@ -1,0 +1,21 @@
+<svg id="CTA-crar-gifo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="54" height="54" viewBox="0 0 54 54">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Combined_Shape" data-name="Combined Shape" d="M7,15V9H1A1,1,0,1,1,1,7H7V1A1,1,0,1,1,9,1V7h6a1,1,0,0,1,0,2H9v6a1,1,0,1,1-2,0Z" transform="translate(4 4)"/>
+    </clipPath>
+  </defs>
+  <g id="Oval_3" data-name="Oval 3" fill="#fff" stroke="#572ee5" stroke-miterlimit="10" stroke-width="1">
+    <circle cx="27" cy="27" r="27" stroke="none"/>
+    <circle cx="27" cy="27" r="26.5" fill="none"/>
+  </g>
+  <g id="video" transform="translate(15 15)">
+    <g id="Grupo_41" data-name="Grupo 41">
+      <path id="Combined_Shape-2" data-name="Combined Shape" d="M7,15V9H1A1,1,0,1,1,1,7H7V1A1,1,0,1,1,9,1V7h6a1,1,0,0,1,0,2H9v6a1,1,0,1,1-2,0Z" transform="translate(4 4)"/>
+      <g id="Enmascarar_grupo_46" data-name="Enmascarar grupo 46" clip-path="url(#clip-path)">
+        <g id="COLOR_black" data-name="COLOR/ black">
+          <rect id="Rectangle" width="24" height="24" fill="#572ee5"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

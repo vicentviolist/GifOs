@@ -1,0 +1,140 @@
+@media only screen and (min-width: 768px) {
+  #buger-closer,
+  #burger-open {
+    display: none;
+  }
+
+  .logo {
+    width: 59.1px;
+    height: 59.1px;
+    padding: 10px 16px;
+  }
+
+  .menu-options {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    top: 0px;
+    right: 100px;
+    height: 0;
+    background-color: #572ee5;
+    body.dark & {
+      background-color: $gris;
+    }
+  }
+
+  .menu-options li {
+    list-style-type: none;
+    text-transform: uppercase;
+    background-color: transparent;
+    display: flex;
+    background: none;
+    margin: 25px;
+
+    body.dark & {
+      background: $gris;
+      a {
+        color: #f3f5f8;
+      }
+    }
+  }
+  .menu-options hr {
+    display: none;
+  }
+  .btn-grabar {
+    display: block;
+  }
+  .menu-options-links {
+    font-family: Montserrat-Bold;
+    font-size: 13px;
+    color: #572ee5;
+    letter-spacing: 0;
+    text-align: center;
+  }
+  .menu-options-links:hover {
+    font-size: 13px;
+    color: #572ee5;
+    letter-spacing: 0;
+    text-align: center;
+  }
+
+  .nav-bar .logo {
+    margin-left: 156px;
+  }
+  .inspirate {
+    margin-right: 80px;
+    margin-top: 24.2px;
+    width: 40%;
+    font-family: Montserrat-Bold;
+    font-size: 35px;
+    color: #572ee5;
+    text-align: center;
+    line-height: 50px;
+  }
+  .searchImg {
+    height: 190px;
+    width: 399px;
+  }
+  .input-search {
+    height: 50px;
+    width: 551px;
+  }
+  .searchbtn {
+    margin-top: -37px;
+    margin-right: -490px;
+    outline: none;
+    border: none;
+    background: none;
+    img {
+      color: #572ee5;
+    }
+  }
+  .img-prueba {
+    height: 275px;
+    width: 357px;
+    margin-left: 60px;
+    margin-bottom: 70px;
+  }
+  .trending-gif {
+    height: 100%;
+    width: 100%;
+    background: #f3f5f8;
+    margin-top: 45px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .img-prueba:hover {
+    cursor: pointer;
+  }
+  .resultados {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 100%;
+    width: 100%;
+    img {
+      width: 260px;
+      height: 200px;
+      margin: none;
+    }
+  }
+
+  // FOOTER SECTION
+  .footer {
+    height: 116px;
+    display: flex;
+    justify-content: space-around;
+    p {
+      margin-top: 50px;
+    }
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+  i {
+    margin-top: 70px;
+  }
+}

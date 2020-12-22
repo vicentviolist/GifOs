@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./sass/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/912872772e.js" crossorigin="anonymous"></script>
+    <title>Grabar gif</title>
+</head>
+
+<body>
+    <section>
+        <div class="fondo"></div>
+        <nav class="nav-bar">
+            <a href="./index.html">
+                <img class="logo" src="./img/Logo.png" alt="Gifos logo" />
+            </a>
+            <input type="checkbox" id="chk-nav-bar" />
+            <ul class="menu-options">
+                <li><a class="menu-options-links" href="#Modo-Nocturno">Modo Nocturno</a></li>
+                <hr>
+                <li><a class="menu-options-links" href="#Favoritos">Favoritos</a></li>
+                <hr>
+                <li>
+                    <a class="menu-options-links" href="#Mis-Gifos">Mis Gifos</a>
+                </li>
+                <li>
+                    <a class="btn-grabar" href="./grabargif.html"><img src="./img/grabar.svg" alt=""></a>
+                </li>
+                <hr>
+            </ul>
+            <label for="chk-nav-bar" id="burger-close" class="burger-close"><span>&#x2716;</span></label>
+            <label for="chk-nav-bar" id="burger-open"><span class="hamburger">☰</span></label>
+        </nav>
+    </section>
+    
+
+    <div class="box-camera">
+        <div class="camera">
+            <img src="./img/camara.svg" alt="">
+            <img class="ligth" src="./img/Path 2.svg" alt="">
+        </div>
+        <div class="grabar-b">
+            <!-- <h1>Aquí podrás
+            crear tus propios GIFOS</h1> -->
+            <video id="video"></video>
+            <img id="mostrarGif"></img>
+        </div>
+    </div>
+    <div class="btns">
+        <img class="btn" src="./img/paso-a-paso.svg" alt="">
+        <img class="btn" src="./img/paso-a-paso copy.svg" alt=""> 
+        <img class="btn" src="./img/paso-a-paso copy 2.svg" alt="">
+    </div>
+    <div id="creados"></div>
+    <div class="hrbox">
+        <hr class="hrm">
+    </div>
+    <div class="comenzar-box">
+        <button class="btnComenzar" id="empezar"><p>EMPEZAR</p></button>
+        <button id="terminar" class="btnTerminar"><p>TERMINAR</p></button>
+        <button class="btnGuardar" id="btnGuardar"><p>GUARDAR</p></button>
+    </div>
+    <div>
+        <img class="pelicula" src="./img/pelicula.svg" alt="">
+    </div>
+
+    
+    <footer class="footer">
+        <div class="row">
+            <h4>
+                Compartir en:
+            </h4>
+            <div class="icons">
+                <div>
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></a></i></div>
+                <div>
+                    <a href="https://twitter.com/?lang=es">
+                        <i class="fab fa-twitter"></i></div>
+                </a>
+                <div>
+                    <a href="https://www.instagram.com/?hl=es-la">
+                        <i class="fab fa-instagram"></i></div>
+                </a>
+            </div>
+        </div>
+        <p>© GIFOS 2020 All Rights Reserved.</p>
+    </footer>
+    <div class="fondo"></div>
+
+    
+    <script src="./scripts/grabar.js"></script> 
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+</body>
+
+</html>

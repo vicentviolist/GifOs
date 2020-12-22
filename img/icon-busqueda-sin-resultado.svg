@@ -1,0 +1,23 @@
+<svg id="icon-busqueda-sin-resultado" xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150">
+  <circle id="Oval_3" data-name="Oval 3" cx="75" cy="75" r="75" fill="#f3f5f8"/>
+  <g id="ouch" transform="translate(38 37)">
+    <path id="Fill_2" data-name="Fill 2" d="M0,0V37.121H4.545V0Z" transform="translate(70.455 14.394)" fill="#50e3c2"/>
+    <path id="Fill_3" data-name="Fill 3" d="M0,4.545H4.545V0H0Z" transform="translate(65.909 51.515)" fill="#50e3c2"/>
+    <path id="Fill_4" data-name="Fill 4" d="M0,4.545H4.545V0H0Z" transform="translate(65.909 9.091)" fill="#50e3c2"/>
+    <path id="Fill_5" data-name="Fill 5" d="M0,4.545H4.545V0H0Z" transform="translate(60.606 56.061)" fill="#50e3c2"/>
+    <path id="Fill_6" data-name="Fill 6" d="M0,4.545H4.545V0H0Z" transform="translate(60.606 4.545)" fill="#50e3c2"/>
+    <path id="Fill_7" data-name="Fill 7" d="M42.273,0V4.8h-4.7V0H0V4.8H32.879V9.6h9.394v4.8h4.7V0Z" transform="translate(13.636 60.606)" fill="#50e3c2"/>
+    <path id="Fill_8" data-name="Fill 8" d="M0,0V4.545H46.97V0Z" transform="translate(13.636)" fill="#50e3c2"/>
+    <path id="Fill_9" data-name="Fill 9" d="M0,4.545H4.545V0H0Z" transform="translate(9.091 56.061)" fill="#50e3c2"/>
+    <path id="Fill_10" data-name="Fill 10" d="M0,4.545H4.545V0H0Z" transform="translate(9.091 4.545)" fill="#50e3c2"/>
+    <path id="Fill_11" data-name="Fill 11" d="M0,4.545H4.545V0H0Z" transform="translate(4.545 51.515)" fill="#50e3c2"/>
+    <path id="Fill_12" data-name="Fill 12" d="M0,4.545H4.545V0H0Z" transform="translate(4.545 9.091)" fill="#50e3c2"/>
+    <path id="Fill_13" data-name="Fill 13" d="M0,0V37.121H4.545V0Z" transform="translate(0 14.394)" fill="#50e3c2"/>
+    <path id="Fill_14" data-name="Fill 14" d="M6.284,12.577A6.08,6.08,0,0,1,0,6.288,6.08,6.08,0,0,1,6.284,0,6.329,6.329,0,0,1,10.8,1.77a6.294,6.294,0,0,1,1.783,4.518A6.294,6.294,0,0,1,10.8,10.807,6.329,6.329,0,0,1,6.284,12.577Zm0-10.28A3.665,3.665,0,0,0,2.636,6.288a3.671,3.671,0,1,0,7.314,0A3.673,3.673,0,0,0,6.284,2.3Z" transform="translate(12.295 25.918)" fill="#50e3c2"/>
+    <path id="Fill_16" data-name="Fill 16" d="M0,7.31V0H2.6V7.218A2.622,2.622,0,0,0,5.436,10.08,2.609,2.609,0,0,0,8.253,7.218V0h2.618V7.291c0,3.026-1.769,5.086-5.435,5.086S0,10.3,0,7.31" transform="translate(26.325 26.118)" fill="#50e3c2"/>
+    <path id="Fill_18" data-name="Fill 18" d="M0,6.289A6.147,6.147,0,0,1,6.411,0a5.508,5.508,0,0,1,5.038,2.971l-2.2,1.094A3.261,3.261,0,0,0,6.411,2.3,3.77,3.77,0,0,0,2.637,6.289a3.77,3.77,0,0,0,3.774,3.992A3.226,3.226,0,0,0,9.246,8.513l2.2,1.076a5.542,5.542,0,0,1-5.038,2.989A6.147,6.147,0,0,1,0,6.289" transform="translate(38.621 25.918)" fill="#50e3c2"/>
+    <path id="Fill_20" data-name="Fill 20" d="M8.253,12.158v-5.1H2.564v5.1H0V0H2.564V4.776H8.253V0h2.582V12.158Z" transform="translate(51.242 26.118)" fill="#50e3c2"/>
+  </g>
+  <path id="Fill_1" data-name="Fill 1" d="M18,0H0V6H24V0Z" transform="translate(63 89)" fill="#f3f5f8"/>
+  <path id="Fill_2_Copy" data-name="Fill 2 Copy" d="M0,4H4V0H0Z" transform="translate(73 38)" fill="#50e3c2"/>
+</svg>

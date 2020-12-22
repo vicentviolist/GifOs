@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="55.53" height="55" viewBox="0 0 55.53 55">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Clip_3" data-name="Clip 3" d="M0,0H47.692V21.906H0Z" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Logo_Mobile" data-name="Logo Mobile" transform="translate(0 0)">
+    <g id="Group_5" data-name="Group 5" transform="translate(0 0)">
+      <path id="Fill_1" data-name="Fill 1" d="M0,0V54.766H48.792V43.03H45.306v7.824H3.485V3.912H34.851V15.647H45.306v7.824h3.485V11.736L38.336,0Z" fill="#5ed7c6"/>
+      <g id="Group_4" data-name="Group 4" transform="translate(7.837 19.018)">
+        <path id="Clip_3-2" data-name="Clip 3" d="M0,0H47.692V21.906H0Z" transform="translate(0 0)" fill="none"/>
+        <g id="Group_4-2" data-name="Group 4" transform="translate(0 0)" clip-path="url(#clip-path)">
+          <text id="GIFOS" transform="translate(0.163)" fill="#fff" font-size="16" font-family="Roboto-Black, Roboto" font-weight="800"><tspan x="0" y="17">GIFOS</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

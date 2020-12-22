@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIFOS</title>
+    <link rel="stylesheet" href="./sass/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/912872772e.js" crossorigin="anonymous"></script>
+</head>
+
+<body name='body'>
+    <section>
+        <div class="fondo"></div>
+        <nav class="nav-bar">
+            <div id="logobox">
+                <img class="logo" id="logo" src="./img/Logo.png" alt="Gifos logo" />
+            </div>
+            <input type="checkbox" id="chk-nav-bar" />
+            <ul class="menu-options">
+                <li><a class="menu-options-links" id="modoNocturno" href="#Modo-Nocturno">Modo Nocturno</a></li>
+                <hr>
+                <li><a class="menu-options-links" href="#Favoritos">Favoritos</a></li>
+                <hr>
+                <li>
+                    <a class="menu-options-links" href="#Mis-Gifos">Mis Gifos</a>
+                </li>
+                <hr>
+                <li>
+                    <a class="btn-grabar" href="./grabargif.html"><img src="./img/CTA-crar-gifo.svg" alt=""></a>
+                </li>
+            </ul>
+            <label for="chk-nav-bar" id="burger-close" class="burger-close"><span>&#x2716;</span></label>
+            <label for="chk-nav-bar" id="burger-open"><span class="hamburger">☰</span></label>
+        </nav>
+    </section>
+    <div class="desaparecer" id="desaparecer">
+        <div class="inspirate-box" id="searchImg">
+
+            <h1 class="inspirate">
+                Inspírate, busca, guarda, y crea los mejores <span style="color: aqua;">GIFOS </span>
+            </h1>
+        </div>
+        <div id="searchImg1"> <img class='searchImg' src="./img/ilustra_header.png" alt=""></div>
+    </div>
+    <section class="search">
+        <div id="cont">
+            <input class="input-search" id="search" placeholder="Busca GIFOS y más" type="text">
+        </div>
+        <img class="searchbtn" id="searchBtn" src="./img/icon-search.svg" alt="">
+    </section>
+    <section>
+        <div class="trending-main" id="trending">
+            <h3>Trending:</h3>
+            <p id="p-textodeTenencias" class="main-description"></p>
+        </div>
+        <h2 id="resultadosh1" class="resultadosh1"></h2>
+        <div class="p-10">
+            <div class="resultados" id="resultados"></div>
+            <div class="ver-mas">
+                <button id="btnvermas" class="btnvermas-hide">ver más</button>
+            </div>
+        </div>
+    </section>
+    <section class="trending-gif">
+        <div>
+            <h2>Trending GIFOS</h2>
+            <p>Mira los últimos</p>
+            <p>GIFOS de nuestra comunidad.</p>
+        </div>
+
+        <div class="scroll" id="tendenciasscroll">
+            <!-- <div class="card">
+                <div id="container-hover" class="container-hover">
+                    <div class="container-icon">
+                        <img src="./img/icon-download.png" alt="icon" class="icon-gifo">
+                        <img src="./img/icon-fav.png" alt="icon" class="icon-gifo">
+                        <img src="./img/icon-max-normal.png" alt="icon" class="icon-gifo">
+                    </div>
+                    <div class="container-desc">
+                        <p class="gif-user">User</p>
+                        <p class="gif-title">Titulo GIFO</p>
+                    </div>
+                </div>
+                <img class="img-prueba" id="${t.id}" src="./img/giphy.webp" alt="${t.title}" />
+            </div> -->
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="row">
+            <h4>
+                Compartir en:
+            </h4>
+            <div class="icons">
+                <div>
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></a></i></div>
+                <div>
+                    <a href="https://twitter.com/?lang=es">
+                        <i class="fab fa-twitter"></i></div>
+                </a>
+                <div>
+                    <a href="https://www.instagram.com/?hl=es-la">
+                        <i class="fab fa-instagram"></i></div>
+                </a>
+            </div>
+        </div>
+        <p>© GIFOS 2020 All Rights Reserved.</p>
+    </footer>
+
+    <div class="fondo"></div>
+    <div id="modal" class="modal">
+        <img id="modal-close" class="modal-close" src="./img/close.svg" alt="close">
+        <img id="selectedGif" class="modal-gif" src="./img/load.gif" alt="selected gif">
+        <div class="modal-details">
+            <div>
+                <h4>usuario</h4>
+                <h3>Titulo gif</h3>
+            </div>
+            <div class="row2">
+                <img src="img/icon-fav-active.png" alt="icono favorito">
+                <a id="downloadGif" href="" target="_blank" download>
+                    <img src="./img/icon-download-hover.png" alt="descargar gif">
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="./scripts/app.js"></script>
+</body>
+
+</html>
