@@ -42,7 +42,7 @@ async function invocarTendencias() {
             <p class="gif-title">${t.title}</p>
         </div>
     </div>
-        <img class="img-prueba" id="${t.id}" src="${t.images.fixed_height.url}" alt="${t.title}"/>`
+        <img class="gifo-tren" id="${t.id}" src="${t.images.fixed_height.url}" alt="${t.title}"/>`
         card.addEventListener("mouseover", () => {
             card.firstElementChild.style.display = "flex";
         })
