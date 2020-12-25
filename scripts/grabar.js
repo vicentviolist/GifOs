@@ -11,6 +11,16 @@ let myGifs = [];
 let creados = document.getElementById('creados')
 const apikey = 'VGV16gAxmvVNiaQDsAlPqSFtInXbLyqA';
 let pathUpload = `https://upload.giphy.com/v1/gifs?api_key=${apikey}`
+let paso1 = document.getElementById('recording-center')
+
+function cronometrar() {
+    h = 0;
+    m = 0;
+    s = -1;
+    document.getElementById("tiempo-repetir").innerHTML = "00:00:00";
+    escribir();
+    id = setInterval(escribir, 1000);
+}
 
 window.onload = function () {
     let gifs = JSON.parse(localStorage.getItem('myGifs'));
@@ -24,6 +34,7 @@ window.onload = function () {
 btnEmpezar.addEventListener('click', () => {
     getStreamAndRecord();
     btnEmpezar.style.display = "none";
+    paso1.style.display = "none";
     btnTerminar.style.display = "block";
 });
 

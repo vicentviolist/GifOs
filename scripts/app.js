@@ -160,7 +160,7 @@ modoNocturno.addEventListener('click',() => {
     if (document.body.className === 'dark') {
         document.body.classList.toggle('dark')
         modoNocturno.innerHTML =`<div>Modo Nocturno</div>`
-        logo.innerHTML = ` <img class="logo" id="logo" src="./img/Logo.png" alt="Gifoslogo" />`
+        logo.innerHTML = ` <a href="./index.html"><img class="logo" id="logo" src="./img/Logo.png" alt="Gifoslogo" /></a>`
         
     } else {
         document.body.classList.toggle('dark')
