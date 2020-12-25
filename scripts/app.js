@@ -77,6 +77,9 @@ search.addEventListener('keyup', (e) => {
         desaparecer.style.display = "flex"
     }
 });
+searchBtn.addEventListener('click', () => {
+    buscarGif();
+});
 
 async function buscarGif() {
     let campo = search.value;
@@ -106,36 +109,16 @@ async function buscarGif() {
         resultado.innerHTML = '';
         btnvermas.classList.add('btnvermas-show')
         btnvermas.style.display = 'block'
-            gifts.forEach((t, i) => {
-        let card = document.createElement("div");
-        card.className = "card-gifo"
-        card.innerHTML = `
-
-        <div id="container-hover" class="container-hover">
-            <div class="container-icon">
-                <img id="${t.id}" src="./img/icon-download.png" alt="icon" class="icon-gifo">
-                <img id="${t.id}" src="./img/icon-fav.png" alt="icon" class="icon-gifo fav">
-                <img  id="${t.id}" src="./img/icon-max-normal.png" alt="icon" class="icon-gifo extend">
-            </div>
-            <div class="container-desc">
-                <p class="gif-title">${t.title}</p>
-            </div>
-            </div>
-            <img class="gifo-trend" id="${t.id}" src="${t.images.fixed_height.url}" alt="${t.title}"/>`
-        card.addEventListener("mouseover", () => {
-            card.firstElementChild.style.display = "flex";
-        })
-        card.addEventListener("mouseout", () => {
-            card.firstElementChild.style.display = "none";
-        })
-        resultado.appendChild(card);
-});
-    resultado.querySelectorAll('.scroll img').forEach((img) => {
-        img.addEventListener('click', onGifClick, false);
-    });
+            gifts.forEach((gift) => {
+            resultado.innerHTML += `
+                <img id="${gift.id}" src="${gift.images.fixed_height_small.url}" alt="${gift.title}"/>
+            `;
+        });
+        document.querySelectorAll('.resultados img').forEach((img) => {
+            img.addEventListener('click', onGifClick, false);
+        });
+    }
 }
-}
-
 
 // Boton ver mas
 let gifoContainer = document.getElementById("gifo-comtainer");
