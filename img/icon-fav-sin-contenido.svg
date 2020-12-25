@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150">
+  <g id="icon-fav-sin-contenido" transform="translate(0 -0.66)">
+    <circle id="Oval_3" data-name="Oval 3" cx="75" cy="75" r="75" transform="translate(0 0.66)" fill="#f3f5f8"/>
+    <path id="Fill_1" data-name="Fill 1" d="M44.36,53.737H31.64V47.767H25.312V41.8H18.984V35.825H12.656V29.854H6.328V23.883H0V11.941H6.328V5.971h6.328V0H31.64V5.971H44.36V0H63.344V5.971h6.328v5.971H76V23.883H69.672v5.971H63.344v5.971H57.016V41.8H50.688v5.971H44.36v5.97ZM12.768,11.147v6h6.384v-6h6.384v-6H19.152v6Z" transform="translate(36.76 48.319)" fill="#50e3c2"/>
+    <path id="Fill_1-2" data-name="Fill 1" d="M18.076,0H0V5.672H24.1V0Z" transform="translate(62 82.66)" fill="#f3f5f8"/>
+    <path id="Fill_2" data-name="Fill 2" d="M0,5.673H6.025V0H0Z" transform="translate(80.192 69)" fill="#f3f5f8"/>
+    <path id="Fill_3" data-name="Fill 3" d="M0,5.673H6.025V0H0Z" transform="translate(62 69)" fill="#f3f5f8"/>
+  </g>
+</svg>

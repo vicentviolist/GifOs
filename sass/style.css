@@ -54,6 +54,7 @@ body.dark .hamburger {
   top: 85px;
   width: 100%;
   opacity: 0.9;
+  z-index: 8;
 }
 
 body.dark .menu-options {
@@ -74,10 +75,12 @@ body.dark .menu-options {
   text-align: center;
   line-height: 60px;
   background: #572ee5 90%;
+  z-index: 8;
 }
 
 body.dark .menu-options li {
   background: #222326;
+  z-index: 8;
 }
 
 .menu-options-links {
@@ -179,6 +182,7 @@ body.dark .inspirate {
   outline: none;
   border: none;
   background: none;
+  cursor: pointer;
 }
 
 .searchbtn i {
@@ -627,7 +631,6 @@ i {
   position: relative;
   width: 200px;
   height: 200px;
-  margin: 10px auto;
   margin: 30px;
   z-index: 2;
 }
@@ -703,6 +706,48 @@ i {
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.favoritesSect {
+  display: none;
+}
+
+.fav-Container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.fav-Container img {
+  margin-top: 30px;
+  height: 21px;
+  width: 28px;
+}
+
+.fav-Container h3 {
+  color: #572ee5;
+}
+
+body.dark .fav-Container h3 {
+  color: #ffffff;
+}
+
+.fav-Container h1 {
+  color: #572ee5;
+}
+
+body.dark .fav-Container h1 {
+  color: #ffffff;
 }
 
 @media only screen and (min-width: 768px) {
@@ -857,6 +902,78 @@ i {
   }
   i {
     margin-top: 70px;
+  }
+  .gifo-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    padding: 0 4%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .card-gifo {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 10px auto;
+    margin: px;
+    z-index: 2;
+  }
+  .container-hover {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 300px;
+    width: 330px;
+  }
+  .container-hover:hover {
+    background-color: rgba(74, 30, 227, 0.4);
+  }
+  img .download {
+    width: 20px;
+    height: 20px;
+    margin: 2px 2px;
+  }
+  .icon-gifo {
+    width: 20px;
+    height: 20px;
+    margin: 2px 2px;
+  }
+  .container-desc p {
+    font-size: 20px;
+    line-height: 20px;
+  }
+  .gifo-trend {
+    position: absolute;
+    width: 330px;
+    height: 300px;
+    z-index: -1;
+  }
+  .card-gifo-carousel {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .scroll {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 360px;
+    margin-left: -20px;
   }
 }
 

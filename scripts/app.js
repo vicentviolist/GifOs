@@ -78,7 +78,12 @@ search.addEventListener('keyup', (e) => {
     }
 });
 searchBtn.addEventListener('click', () => {
-    buscarGif();
+    if ('click') {
+            buscarGif();
+            desaparecer.style.display = "none"
+    }if(search.value <= 1){
+        desaparecer.style.display = "flex"
+    }
 });
 
 async function buscarGif() {
@@ -155,13 +160,13 @@ modoNocturno.addEventListener('click',() => {
     if (document.body.className === 'dark') {
         document.body.classList.toggle('dark')
         modoNocturno.innerHTML =`<div>Modo Nocturno</div>`
-        logo.innerHTML = `<img class="logo" id="logo" src="./img/Logo.png" alt="Gifoslogo" />`
+        logo.innerHTML = ` <img class="logo" id="logo" src="./img/Logo.png" alt="Gifoslogo" />`
         
     } else {
         document.body.classList.toggle('dark')
         console.log('Cambio de tema');
         modoNocturno.innerHTML =`<div>Modo Diurno</div>`
-        logo.innerHTML = `<img class="logo" id="logo" src="./img/LogoMobile.svg" alt="Gifoslogo" />`
+        logo.innerHTML = `<a href="./index.html"><img class="logo" id="logo" src="./img/LogoMobile.svg" alt="Gifoslogo" /> </a>`
     }
     
 })
@@ -198,3 +203,94 @@ modal.addEventListener('click', (e) => {
         modal.style.display = 'none';
     }
 });
+
+
+
+
+
+// PARA GUARDAR FAVORITOS
+document.getElementById("favoritos").addEventListener("click", favoritos);
+
+function favoritos() {
+    document.getElementById("favBlock").style.display = "none";
+    document.getElementById("favoritesSect").style.display = "block";
+    document.getElementById("srch-opc").style.display = "initial";
+    document.getElementById("favorites-icon").style.display = "block";
+    document.getElementById("favorites-title").style.display = "block";
+    document.getElementById("misgif-nocontent").style.display = "none";
+    document.getElementById("text-mg-sc").style.display = "none";
+    document.getElementById("nav-search").style.visibility = "hidden";
+    document.getElementById("more-fav").style.display = "block";
+    
+    offsetFav = 12;
+    if (arregloFavoritos.length <= 12) {
+        document.getElementById("more-fav").style.display = "none";
+        offsetFav = arregloFavoritos.length;
+    }
+    if (arregloFavoritos.length !== 0) {
+        document.getElementById("fav-no-content").style.display = "none";
+        document.getElementById("text-fav-sc").style.display = "none";
+    } else {
+        document.getElementById("fav-no-content").style.display = "block";
+        document.getElementById("text-fav-sc").style.display = "block";
+    }
+    eliminarGrid();
+    vistaFavoritos(offsetFav);
+    if (screen.width < desktop) {
+        mostrarMenu();
+    }
+}
+
+//----------SAVED----------//
+function vistaFavoritos(offsetFav) {
+    for (i = 0; i < offsetFav; i++) {
+        let gifFav = document.createElement("img");
+        if (screen.width >= desktop) {
+            let hoverFavoritos = document.createElement("div");
+            document.getElementById("grid-srch").appendChild(hoverFavoritos);
+            hoverFavoritos.setAttribute("id", "hoverF" + i)
+            hoverFavoritos.setAttribute("class", "contenedorFavoritos");
+            document.getElementById("hoverF" + i).appendChild(gifFav);
+            hoverCardsF(arregloFavoritos[i].id, arregloFavoritos[i].url, arregloFavoritos[i].title, arregloFavoritos[i].username, i);
+        } else {
+            document.getElementById("grid-srch").appendChild(gifFav);
+        }
+        gifFav.setAttribute("src", "/assets/trabajando.png")
+        gifFav.setAttribute("class", "img-fav");
+        gifFav.setAttribute("id", arregloFavoritos[i].id);
+        gifFav.setAttribute("src", arregloFavoritos[i].url);
+        gifFav.setAttribute("title", arregloFavoritos[i].title);
+        gifFav.setAttribute("alt", arregloFavoritos[i].username);
+        if (screen.width >= desktop) {
+            precargaFavFav(arregloFavoritos[i].id, i)
+        }
+        gifFav.addEventListener("click", function() {
+            if (screen.width <= desktop) {
+                abrirGifosMax();
+            }
+        })
+    }
+}
+
+
+// esta funcion guarda un gif como favorito
+function guardarFavorito() {
+    let favIcon = document.getElementsByClassName("icon-gifo fav");
+    for (let i = 0; i < favIcon.length; i++) {
+        const element = favIcon[i];
+        if (localStorage.getItem("favoritos", JSON.stringify(favorites))) {
+            favorites= JSON.parse(localStorage.getItem("favoritos"));
+        }
+        element.addEventListener("click", () => {
+            let idFav = (event.target.id);
+            if (element.src === "./img/icon-fav-active.svg") {
+                alert("Ya has guardado este gif como favorito");
+            } else {
+                favorites.push(idFav);
+            }
+            element.src = "./img/icon-fav-active.svg";
+            localStorage.setItem("favoritos", JSON.stringify(favorites))
+            
+        })
+    }
+}

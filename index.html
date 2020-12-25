@@ -18,13 +18,15 @@
         <div class="fondo"></div>
         <nav class="nav-bar">
             <div id="logobox">
-                <img class="logo" id="logo" src="./img/Logo.png" alt="Gifos logo" />
+                <a href="./index.html">
+                    <img class="logo" id="logo" src="./img/Logo.png" alt="Gifos logo" />
+                </a>
             </div>
             <input type="checkbox" id="chk-nav-bar" />
             <ul class="menu-options">
                 <li><a class="menu-options-links" id="modoNocturno" href="#Modo-Nocturno">Modo Nocturno</a></li>
                 <hr>
-                <li><a class="menu-options-links" href="#Favoritos">Favoritos</a></li>
+                <li><a class="menu-options-links" id="favoritos" href="#Favoritos">Favoritos</a></li>
                 <hr>
                 <li>
                     <a class="menu-options-links" href="#Mis-Gifos">Mis Gifos</a>
@@ -38,34 +40,45 @@
             <label for="chk-nav-bar" id="burger-open"><span class="hamburger">☰</span></label>
         </nav>
     </section>
-    <div class="desaparecer" id="desaparecer">
-        <div class="inspirate-box" id="searchImg">
-
-            <h1 class="inspirate">
-                Inspírate, busca, guarda, y crea los mejores <span style="color: aqua;">GIFOS </span>
-            </h1>
-        </div>
-        <div id="searchImg1"> <img class='searchImg' src="./img/ilustra_header.png" alt=""></div>
-    </div>
-    <section class="search">
-        <div id="cont">
-            <input class="input-search" id="search" placeholder="Busca GIFOS y más" type="text">
-        </div>
-        <img class="searchbtn" id="searchBtn" src="./img/icon-search.svg" alt="">
-    </section>
-    <section>
-        <div class="trending-main" id="trending">
-            <h3>Trending:</h3>
-            <p id="p-textodeTenencias" class="main-description"></p>
-        </div>
-        <h2 id="resultadosh1" class="resultadosh1"></h2>
-        <div class="p-10">
-            <div class="resultados" id="resultados"></div>
-            <div class="ver-mas">
-                <button id="btnvermas" class="btnvermas-hide">ver más</button>
+    <div id="favBlock">
+        <div class="desaparecer" id="desaparecer">
+            <div class="inspirate-box" id="searchImg">
+    
+                <h1 class="inspirate">
+                    Inspírate, busca, guarda, y crea los mejores <span style="color: aqua;">GIFOS </span>
+                </h1>
             </div>
+            <div id="searchImg1"> <img class='searchImg' src="./img/ilustra_header.png" alt=""></div>
         </div>
-    </section>
+        <section class="search">
+            <div id="cont">
+                <input class="input-search" id="search" placeholder="Busca GIFOS y más" type="text">
+            </div>
+            <img class="searchbtn" id="searchBtn" src="./img/icon-search.svg" alt="">
+        </section>
+        <section>
+            <div class="trending-main" id="trending">
+                <h3>Trending:</h3>
+                <p id="p-textodeTenencias" class="main-description"></p>
+            </div>
+            <h2 id="resultadosh1" class="resultadosh1"></h2>
+            <div class="p-10">
+                <div class="resultados" id="resultados"></div>
+                <div class="ver-mas">
+                    <button id="btnvermas" class="btnvermas-hide">ver más</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div id="favoritesSect" class="favoritesSect">
+        <div class="fav-Container">
+            <img src="./img/Fill 1.svg" alt="Icono favoritos" id="favorites-icon" class="favorites-icon" />
+            <h1 id="favorites-title" class="favorites-title">Favoritos</h1>
+            <!-- <img src="./img/icon-fav-sin-contenido.svg" alt="Icono favoritos sin contenido" class="nofav" id="fav-no-content"
+                class="fav-no-content" />
+            <h3 id="text-fav-sc">"¡Guarda tu primer GIFO en Favoritos para que se muestre aqui!"</h3> -->
+        </div>
+    </div>
     <section class="trending-gif">
         <div>
             <h2>Trending GIFOS</h2>

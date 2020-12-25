@@ -137,4 +137,67 @@
   i {
     margin-top: 70px;
   }
+  .gifo-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: space-around;
+    padding: 0 4%;
+    box-sizing: border-box;
+  }
+
+  .card-gifo {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 10px auto;
+    margin: px;
+    z-index: 2;
+  }
+
+  .container-hover {
+    justify-content: space-between;
+    height: 300px;
+    width: 330px;
+    &:hover {
+      background-color: rgba(74, 30, 227, 0.4);
+    }
+  }
+  img {
+    .download {
+      width: 20px;
+      height: 20px;
+      margin: 2px 2px;
+    }
+  }
+  .icon-gifo {
+    width: 20px;
+    height: 20px;
+    margin: 2px 2px;
+  }
+  .container-desc {
+    p {
+      font-size: 20px;
+      line-height: 20px;
+    }
+  }
+
+  .gifo-trend {
+    position: absolute;
+    width: 330px;
+    height: 300px;
+    z-index: -1;
+  }
+  .card-gifo-carousel {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .scroll {
+    display: flex;
+    justify-content: space-between;
+    height: 360px;
+    margin-left: -20px;
+  }
 }
