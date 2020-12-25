@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="67.272" height="59.109" viewBox="0 0 67.272 59.109">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Clip_3" data-name="Clip 3" d="M0,0H57.777V23.643H0Z" transform="translate(0.495 0.526)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Logo" transform="translate(0 0)">
+    <g id="Group_5" data-name="Group 5">
+      <path id="Fill_1" data-name="Fill 1" d="M0,0V59.109H59.109V46.442H54.887v8.444H4.222V4.222h38V16.888H54.887v8.445h4.222V12.666L46.442,0Z" transform="translate(0 0)" fill="#5ed7c6"/>
+      <g id="Group_4" data-name="Group 4" transform="translate(9 20)">
+        <path id="Clip_3-2" data-name="Clip 3" d="M0,0H57.777V23.643H0Z" transform="translate(0.495 0.526)" fill="none"/>
+        <g id="Group_4-2" data-name="Group 4" clip-path="url(#clip-path)">
+          <text id="GIFOS" transform="translate(3 4)" fill="#572ee5" font-size="18" font-family="Roboto-Black, Roboto" font-weight="800"><tspan x="0" y="19">GIFOS</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
