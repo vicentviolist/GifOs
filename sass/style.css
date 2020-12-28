@@ -253,7 +253,7 @@ main .main-description {
 
 .btnvermas-show {
   display: block;
-  font-family: "Montserrat", Bold;
+  font-family: "Montserrat", sans-serif;
   font-size: 13px;
   letter-spacing: 0;
   text-align: center;
@@ -272,7 +272,7 @@ body.dark .btnvermas-show {
 
 .btnTerminar {
   display: none;
-  font-family: "Montserrat", Bold;
+  font-family: "Montserrat", sans-serif;
   font-size: 13px;
   letter-spacing: 0;
   text-align: center;
@@ -286,7 +286,7 @@ body.dark .btnvermas-show {
 
 .btnGuardar {
   display: none;
-  font-family: "Montserrat", Bold;
+  font-family: "Montserrat", sans-serif;
   font-size: 13px;
   letter-spacing: 0;
   text-align: center;
@@ -298,9 +298,15 @@ body.dark .btnvermas-show {
   outline: none;
 }
 
+.btnGuardar:hover {
+  color: white;
+  border: 1px solid #572ee5;
+  background: #572ee5;
+}
+
 .btnvermas-show:active {
   display: block;
-  font-family: "Montserrat", Bold;
+  font-family: "Montserrat", sans-serif;
   font-size: 13px;
   letter-spacing: 0;
   text-align: center;
@@ -313,6 +319,27 @@ body.dark .btnvermas-show {
 }
 
 body.dark .btnvermas-show:active {
+  color: black;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.btnvermas-show:hover {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  border: 1px solid #572ee5;
+  background: #572ee5;
+  padding: 10px;
+  border-radius: 114px 114px 114px 114px;
+  outline: none;
+}
+
+body.dark .btnvermas-show:hover {
   color: black;
   border: 1px solid black;
   background-color: white;
@@ -357,12 +384,9 @@ body.dark .resultadosh1 {
 .resultados img {
   width: 156px;
   height: 120px;
-  margin: 25px 0px 0 15px;
+  margin: auto;
+  margin-top: 20px;
   cursor: pointer;
-}
-
-.resultados img:hover {
-  color: #572ee5;
 }
 
 .input-search {
@@ -679,6 +703,7 @@ i {
   width: 20px;
   height: 20px;
   margin: 2px 2px;
+  cursor: pointer;
 }
 
 .container-desc {
@@ -954,13 +979,20 @@ body.dark .fav-Container h1 {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     -ms-grid-rows: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 100%;
     width: 100%;
   }
   .resultados img {
     width: 260px;
     height: 200px;
-    margin: none;
+    margin: auto;
+    margin-top: 20px;
   }
   .footer {
     height: 116px;
