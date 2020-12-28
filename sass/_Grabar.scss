@@ -45,7 +45,7 @@
   }
   .pelicula {
     position: absolute;
-    margin-left: 1080px;
+    margin-left: 1280px;
     margin-top: -150px;
   }
   .comenzar-box {
@@ -67,5 +67,11 @@
     padding: 10px;
     border-radius: 114px 114px 114px 114px;
     outline: none;
+  }
+  .creados {
+    display: flex;
+    align-items: center;
+    color: #572ee5;
+    justify-content: center;
   }
 }

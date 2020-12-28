@@ -132,6 +132,15 @@
       margin-top: 50px;
     }
   }
+  .footer-grabar {
+    margin-top: 80px;
+    height: 116px;
+    display: flex;
+    justify-content: space-around;
+    p {
+      margin-top: 50px;
+    }
+  }
   .row {
     display: flex;
     align-items: center;
@@ -202,5 +211,45 @@
     justify-content: space-between;
     height: 360px;
     margin-left: -20px;
+  }
+  .modal-gif {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    width: 50vw;
+    margin-top: 73px;
+  }
+  .modal {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    opacity: 0.98;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    &-close {
+      align-self: flex-end;
+      margin-right: 25vw;
+    }
+
+    &-gif {
+      align-self: center;
+      width: 50vw;
+      margin-top: 73px;
+    }
+
+    &-details {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 14px;
+      align-self: center;
+      width: 50vw;
+    }
   }
 }

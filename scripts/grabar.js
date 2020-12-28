@@ -3,14 +3,15 @@
 let btnEmpezar = document.getElementById('empezar');
 let btnTerminar = document.getElementById('terminar');
 let btnGuardar = document.getElementById('btnGuardar');
+let btnSubir = document.getElementById('btnSubir')
 let video = document.getElementById('video');
 let mostrarGif = document.getElementById('mostrarGif');
 let recorder = null;
 let form = new FormData();
 let myGifs = [];
 let creados = document.getElementById('creados')
-const apikey = 'VGV16gAxmvVNiaQDsAlPqSFtInXbLyqA';
-let pathUpload = `https://upload.giphy.com/v1/gifs?api_key=${apikey}`
+const apikey = 'wioJ8mi8wlULE7hExqq9lNJTkDcbiZqB'; 
+let pathUpload = `https://upload.giphy.com/v1/gifs?api_key=${apikey}` 
 let paso1 = document.getElementById('recording-center')
 
 function cronometrar() {
@@ -96,7 +97,32 @@ async function createGif(formData) {
     return json.data.id;
 }
 btnGuardar.addEventListener('click' , () => {
+    btnGuardar.style.display ='none'
+    btnSubir.style.display ='block'
     creados.innerHTML += `
-        <h1 >${myGifs[0]}</h1>
         `;
 }) 
+
+btnSubir.addEventListener('click', () =>{
+    btnSubir.style.display ='none'
+    let finGrabar = document.getElementById('finGrabar')
+    creados.innerHTML += `<h2>Gif subido</h2>`
+})
+let modoNocturno = document.getElementById('modoNocturno');
+let body = document.getElementsByName('body')
+let logo = document.getElementById('logobox')
+
+modoNocturno.addEventListener('click',() => {
+    if (document.body.className === 'dark') {
+        document.body.classList.toggle('dark')
+        modoNocturno.innerHTML =`<div>Modo Nocturno</div>`
+        logo.innerHTML = ` <a href="./index.html"><img class="logo" id="logo" src="./img/Logo.png" alt="Gifoslogo" /></a>`
+        
+    } else {
+        document.body.classList.toggle('dark')
+        console.log('Cambio de tema');
+        modoNocturno.innerHTML =`<div>Modo Diurno</div>`
+        logo.innerHTML = `<a href="./index.html"><img class="logo" id="logo" src="./img/LogoMobile.svg" alt="Gifoslogo" /> </a>`
+    }
+    
+})
