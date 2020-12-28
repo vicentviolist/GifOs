@@ -166,7 +166,6 @@
     width: 200px;
     height: 200px;
     margin: 10px auto;
-    margin: px;
     z-index: 2;
   }
 
@@ -210,10 +209,12 @@
     box-sizing: border-box;
   }
   .scroll {
+    width: 100%;
+    overflow: hidden;
     display: flex;
     justify-content: space-between;
     height: 360px;
-    margin-left: -20px;
+    margin-left: -40px;
   }
   .modal-gif {
     display: flex;
