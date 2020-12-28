@@ -1112,6 +1112,7 @@ body.dark .fav-Container h1 {
         -ms-grid-row-align: center;
         align-self: center;
     width: 50vw;
+    height: 30vw;
     margin-top: 73px;
   }
   .modal-details {
