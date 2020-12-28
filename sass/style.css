@@ -777,6 +777,12 @@ body.dark .fav-Container h1 {
   color: #ffffff;
 }
 
+.scrollfav {
+  display: none;
+  width: 100%;
+  height: 500px;
+}
+
 #recording-center {
   display: -webkit-box;
   display: -ms-flexbox;
