@@ -64,7 +64,7 @@ async function invocarTendencias() {
 let resultado = document.getElementById('resultados');
 let resultadoh1 = document.getElementById('resultadosh1');
 let searchBtn = document.getElementById('searchBtn');
-let search = document.getElementById('search');
+let search = document.getElementById('search-input');
 let searchIcon = document.querySelector('.resultados img')
 let btnvermas = document.getElementById('btnvermas')
 let desaparecer = document.getElementById('desaparecer')
@@ -73,6 +73,18 @@ let desaparecer = document.getElementById('desaparecer')
 search.addEventListener('keyup', (e) => {
     if (e.key === 'Enter') {
             buscarGif();
+            desaparecer.style.display = "none"
+    }if(search.value <= 1){
+        desaparecer.style.display = "flex"
+    }if(search.value <= 1){
+        resultadoh1.innerHTML = '';
+         resultado.innerHTML = '';
+         btnvermas.style.display ='none'
+    }
+});
+search.addEventListener('keyup', () => {
+    if ('keyup') {
+            llamaSugerencias()
             desaparecer.style.display = "none"
     }if(search.value <= 1){
         desaparecer.style.display = "flex"
@@ -151,7 +163,81 @@ btnvermas.addEventListener("click", () => {
     }
 })  
 
+// Funcion para auto contemplado
+let sugerencias = document.getElementById('sugerencias');
+let lupaDer = document.getElementById("lupa-close");
+let lupaIzq = document.getElementById("lupa-izq");
+lupaIzq.addEventListener('click', () =>{
+     if ('click') {
+            buscarGif();
+             contenedor = document.getElementById("opciones");
+    contenedor.innerHTML = " ";
+            desaparecer.style.display = "none"
+    }if(search.value <= 1){
+        desaparecer.style.display = "flex"
+    }
+})
+async function llamaSugerencias() {
+    const busqueda = search.value;
+    let apikey = 'wioJ8mi8wlULE7hExqq9lNJTkDcbiZqB';
+    const path = `https://api.giphy.com/v1/gifs/search/tags?api_key=${apikey}&q=${busqueda}&limit=4&offset=0&rating=g&lang=en`;
+    let llamado = await fetch(path);
+    let json = await llamado.json();
+    sugerencias.innerHTML = " ";
+    contenedor = document.createElement("div");
+    contenedor.id = "opciones";
+    contenedor.className = "opciones";
+    contenedor.innerHTML = `<hr class="hrop">`;
+    contenedor.style.cursor = "pointer";
+    for (let i = 0; i < json.data.length; i++) {
+        const element = json.data[i];
+        let id = i;
+        let sugerencia = document.createElement("p");
+        sugerencia.className = "suggestion"
+        sugerencia.innerHTML = `<label class="suggest" for="${id}">${element.name}</label>`
+        contenedor.appendChild(sugerencia);
+    }
+    sugerencias.appendChild(contenedor);
+    let select = document.getElementsByClassName("suggest"); 
+    for (let i = 0; i < select.length; i++) {
+        const element = select[i];
+        element.addEventListener("mouseover", () => {
+            event.target.style.color = "#0078d7";
+        })
+        element.addEventListener("click", () => {
+            search.value = element.innerHTML;
+            buscarGif();
+            contenedor.style.display="none";
+        })
+    }
+}
+search.addEventListener("keyup", (contenedor) => {
+    lupaDer.src = "./img/close.svg";
+    lupaDer.style.width = '18px';
+    lupaDer.style.height = '18px';
+    lupaIzq.style.display = "block";
+    sugerencias.innerHTML = " ";
+    sugerencias.style.display = "block";
+    llamaSugerencias();
 
+})
+lupaDer.addEventListener("click", () => {
+    search.value = "";
+    contenedor = document.getElementById("opciones");
+    contenedor.innerHTML = " ";
+    lupaDer.src = "./img/close.svg" ? lupaDer.src = "./img/icon-search.svg" : lupaDer.src = "./img/close.svg";
+    lupaDer.style.width = '23px';
+    lupaDer.style.height = '23px';
+    lupaIzq.style.display = 'none';
+    resultadoh1.innerHTML = '';
+    resultado.innerHTML = '';
+    btnvermas.style.display ='none'
+    desaparecer.style.display = "flex"
+    if(search.value <= 1){
+         contenedor.innerHTML = " ";
+    }
+
+})
 
 // Para entrar en modo nocturno 
 let modoNocturno = document.getElementById('modoNocturno');
