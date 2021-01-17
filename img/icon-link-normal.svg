@@ -1,0 +1,9 @@
+<svg id="icon-link-normal" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Combined_Shape" data-name="Combined Shape" d="M12.5,10a.833.833,0,0,1,0-1.667H15a3.333,3.333,0,0,0,0-6.666H12.5A.833.833,0,0,1,12.5,0H15a5,5,0,0,1,0,10ZM5,10A5,5,0,1,1,5,0H7.5a.833.833,0,1,1,0,1.667H5A3.333,3.333,0,0,0,5,8.333H7.5A.833.833,0,1,1,7.5,10ZM6.666,5.833a.833.833,0,1,1,0-1.666h6.667a.833.833,0,1,1,0,1.666Z" transform="translate(6 11)" fill="rgba(87,46,229,0.7)"/>
+    </clipPath>
+  </defs>
+  <rect id="Rectangle_Copy_12" data-name="Rectangle Copy 12" width="32" height="32" rx="6" fill="#fff" opacity="0.7"/>
+  <path id="Combined_Shape-2" data-name="Combined Shape" d="M12.5,10a.833.833,0,0,1,0-1.667H15a3.333,3.333,0,0,0,0-6.666H12.5A.833.833,0,0,1,12.5,0H15a5,5,0,0,1,0,10ZM5,10A5,5,0,1,1,5,0H7.5a.833.833,0,1,1,0,1.667H5A3.333,3.333,0,0,0,5,8.333H7.5A.833.833,0,1,1,7.5,10ZM6.666,5.833a.833.833,0,1,1,0-1.666h6.667a.833.833,0,1,1,0,1.666Z" transform="translate(6 11)" fill="rgba(87,46,229,0.7)"/>
+</svg>

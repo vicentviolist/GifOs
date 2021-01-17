@@ -1,0 +1,9 @@
+<svg id="button-slider-right-hover" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="button-right-hover" d="M5.586,7,.293,12.293a1,1,0,0,0,1.414,1.414l6-6a1,1,0,0,0,0-1.414l-6-6A1,1,0,0,0,.293,1.707Z" transform="translate(16 13)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <rect id="Rectangle_Copy_8" data-name="Rectangle Copy 8" width="40" height="40" fill="#572ee5"/>
+  <path id="button-right-hover-2" data-name="button-right-hover" d="M5.586,7,.293,12.293a1,1,0,0,0,1.414,1.414l6-6a1,1,0,0,0,0-1.414l-6-6A1,1,0,0,0,.293,1.707Z" transform="translate(16 13)" fill="#fff"/>
+</svg>

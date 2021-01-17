@@ -1,5 +1,5 @@
 const apikey = 'wioJ8mi8wlULE7hExqq9lNJTkDcbiZqB';
-const pathTendencias = `https://api.giphy.com/v1/gifs/trending?api_key=${apikey}&limit=3`;
+const pathTendencias = `https://api.giphy.com/v1/gifs/trending?api_key=${apikey}&limit=7`;
 let gifosBuscados = 12;
 
 // Para cargar el texto en trending y cargar las tendencias a la seccion de carrousel
@@ -7,6 +7,7 @@ async function getGiftsByText(campo, offset) {
     const pathBusqueda = `https://api.giphy.com/v1/gifs/search?api_key=${apikey}&limit=${gifosBuscados}&q=${campo}&offset=${offset}&rating=g&lang=es`;
     const response = await fetch(pathBusqueda);
     const gifs = await response.json();
+    let download = gifs.bitly_url;
     return gifs.data;
 }
 let tendencias = document.getElementById('tendencias');
@@ -15,6 +16,7 @@ async function cargarTendencias() {
     const response = await fetch(pathTendencias);
     const tendencias = await response.json();
     return tendencias.data;
+    
 }      
 
 window.onload = function () {
@@ -26,34 +28,34 @@ async function invocarTendencias() {
     let trendings = await cargarTendencias();
     textoTendencias.innerHTML = '';
     tendenciasscroll.innerHTML = '';
+    
     trendings.forEach((t, i) => {
         textoTendencias.innerHTML += t.title +
         (i === trendings.length - 1 ? '' : ', ');
         let card = document.createElement("div");
+        let download = t.bitly_url;
         card.className = "card-gifo"
         card.innerHTML = `
 
         <div id="container-hover" class="container-hover">
             <div class="container-icon">
-                <img id="${t.id}" src="./img/icon-download.png" alt="icon" class="icon-gifo">
-                <img id="${t.id}" src="./img/icon-fav.png" alt="icon" class="icon-gifo fav">
-                <img  id="${t.id}" src="./img/icon-max-normal.png" alt="icon" class="icon-gifo extend">
+               <a href="${download}" target="_blank" >  <img id="${t.id}" src="./img/icon-download.svg" alt="icon" class="icon-gifo download"> </a>
+                <img id="${t.id}" src="./img/icon-fav.svg" alt="icon" class="icon-gifo fav">
+                <img  id="${t.id}" src="./img/icon-max-normal.svg" alt="icon" class="icon-gifo extend">
             </div>
             <div class="container-desc">
                 <p class="gif-title">${t.title}</p>
             </div>
             </div>
             <img class="gifo-trend" id="${t.id}" src="${t.images.fixed_height.url}" alt="${t.title}"/>`
-        card.addEventListener("mouseover", () => {
-            card.firstElementChild.style.display = "flex";
-        })
-        card.addEventListener("mouseout", () => {
-            card.firstElementChild.style.display = "none";
-        })
+        
         tendenciasscroll.appendChild(card);
 });
-    tendenciasscroll.querySelectorAll('.scroll img').forEach((img) => {
+    tendenciasscroll.querySelectorAll('.extend').forEach((img) => {
         img.addEventListener('click', onGifClick, false);
+    });
+    tendenciasscroll.querySelectorAll('.download').forEach((img) => {
+        img.addEventListener('click',  downloadGifclick, false);
     });
     guardarFavorito()
 }
@@ -74,6 +76,13 @@ search.addEventListener('keyup', (e) => {
     if (e.key === 'Enter') {
             buscarGif();
             desaparecer.style.display = "none"
+             lupaDer.src = "./img/close.svg";
+    lupaDer.style.width = '18px';
+    lupaDer.style.height = '18px';
+    lupaIzq.style.display = "block";
+    sugerencias.innerHTML = " ";
+    sugerencias.style.display = "block";
+            
     }if(search.value <= 1){
         desaparecer.style.display = "flex"
     }if(search.value <= 1){
@@ -128,16 +137,53 @@ async function buscarGif() {
         btnvermas.classList.add('btnvermas-show')
         btnvermas.style.display = 'block'
             gifts.forEach((gift) => {
-            resultado.innerHTML += `
-                <img id="${gift.id}" src="${gift.images.fixed_height_small.url}" alt="${gift.title}"/>
+                
+         let card = document.createElement("div");
+         let download = gift.bitly_url;
+        card.className = "card-gifo"
+        card.innerHTML = ` <div id="container-hover" class="container-hover">
+            <div class="container-icon">
+              <a href='${download}'>  <img id="${gift.id}" src="./img/icon-download.png" alt="icon" class="icon-gifo"></a>
+                <img id="${gift.id}" src="./img/icon-fav.png" alt="icon" class="icon-gifo fav">
+                <img  id="${gift.id}" src="./img/icon-max-normal.png" alt="icon" class="icon-gifo extend">
+            </div>
+            <div class="container-desc">
+                <p class="gif-title">${gift.title}</p>
+            </div>
+            </div>
+            <img class="gifo-search" id="${gift.id}" src="${gift.images.fixed_height_small.url}" alt="${gift.title}"/>
             `;
+             resultado.appendChild(card);
         });
-        document.querySelectorAll('.resultados img').forEach((img) => {
+        document.querySelectorAll('.extend').forEach((img) => {
             img.addEventListener('click', onGifClick, false);
         });
     }
     guardarFavorito()
 }
+// Para realizar el slide con los
+ let btnslide1 =  document.getElementById('btn-slide1');
+ let btnslide2 =  document.getElementById('btn-slide2');
+btnslide1.addEventListener('mouseover', () => {
+    btnslide1.src = "./img/button-slider-left-hover.svg"
+});
+btnslide1.addEventListener('mouseout', () => {
+    btnslide1.src = "./img/button-slider-left.svg"
+});
+btnslide2.addEventListener('mouseover', () => {
+    btnslide2.src = "./img/button-slider-right-hover.svg"
+});
+btnslide2.addEventListener('mouseout', () => {
+    btnslide2.src = "./img/button-slider-right.svg"
+});
+
+// aqui se le hace slider con los botones
+btnslide1.addEventListener('click', function leftSlider() {
+    tendenciasscroll.scrollLeft -= 1100;
+});
+btnslide2.addEventListener('click', function rightSlider() {
+    tendenciasscroll.scrollLeft += 1100;
+});
 
 // Boton ver mas
 let gifoContainer = document.getElementById("gifo-comtainer");
@@ -267,6 +313,11 @@ async function getGifById(id) {
     const gif = await response.json();
     return gif.data;
 }
+let downloadGi = document.querySelectorAll('.download');
+async function downloadGifclick(img){
+    let gifData = await getGifById(img.target.id);
+    downloadGi.href = gifData.images.downsized.url;
+}
 
 
 let modal = document.getElementById('modal');
@@ -293,19 +344,15 @@ modal.addEventListener('click', (e) => {
 });
 
 
-
-
-
 // PARA GUARDAR FAVORITOS
 let favorites = []
 
 document.getElementById("favoritos").addEventListener("click", favoritos);
-let scrollfav = document.getElementById('scrollfav')
 
 function favoritos() {
     document.getElementById("favBlock").style.display = "none";
-    scrollfav.style.display = "flex";
     document.getElementById("favoritesSect").style.display = "block";
+    misGuifos.style.display = "none";
     
 }
 
@@ -318,65 +365,78 @@ function guardarFavorito() {
         }
         element.addEventListener("click", () => {
             let idFav = (event.target.id);
-            if (element.src === "./img/icon-fav-active.svg") {
+            if (element.src === "./img/icon-fav-hover.svg") {
                 alert("Ya has guardado este gif como favorito");
             } else {
                 favorites.push(idFav);
             }
-            element.src = "./img/icon-fav-active.svg";
+            element.src = "./img/icon-fav-hover.svg";
             localStorage.setItem("favoritos", JSON.stringify(favorites))
             
         })
     }
 }
+console.log(localStorage)
+// Para traer a los favoritos
+
+var favContainer = document.getElementById("gifo-container-fav");
+
+// con esta funcion consultamos el localstorage y mostramos los gif guardados
 async function muestraFavoritos(params) {
-    const contra = 'wioJ8mi8wlULE7hExqq9lNJTkDcbiZqB';
-    scrollfav.innerHTML = " "
+    favContainer.innerHTML = ""
     let favorites = JSON.parse(localStorage.getItem("favoritos"));
     // verificamos si hay algun gif guardado para poner icono
     if (favorites === null) {
-        let image = document.getElementById("corazoncito");
-        image.src = "./imgs/icon-fav-sin-contenido.svg";
-        image.style.width = "80px"
-        image.style.height = "80px"
+       console.log('No hay favoritos');
+       let favoritesIcon = document.getElementById('favorites-icon')
+       let favoritesTitle = document.getElementById('favorites-title')
+       favoritesIcon.style.display = 'none'
+       favoritesTitle.style.display = 'none'
+       console.log('No hay favoritos');
+    }else{
+       let textSinContenido = document.getElementById('text-fav-sc')
+       let favIconNoContent = document.getElementById('fav-no-content')
+       favIconNoContent.style.display = "none"
+       textSinContenido.style.display = 'none'
+       console.log('Si hay favoritos');
     }
+     
     for (let i = 0; i < favorites.length; i++) {
         const element = favorites[i];
-        const path = `https://api.giphy.com/v1/gifs?api_key=${contra}&ids=${element}`;
+        let apikey = 'wioJ8mi8wlULE7hExqq9lNJTkDcbiZqB';
+        let path = `https://api.giphy.com/v1/gifs?api_key=${apikey}&ids=${element}`;
         let llamado = await fetch(path);
         let json = await llamado.json();
-        let elemento = json.data[0];
+        let elemento = json.data[0]; 
         let src = elemento.images.fixed_width.url;
         let gifoName = elemento.title;
-        let download = element.bitly_url;
+        let download = elemento.bitly_url;
         let user = elemento.username;
         let id = elemento.id;
         let card = document.createElement("div");
         card.id = "card-gifo"
         card.className = "card-gifo"
-        card.innerHTML = ` <div id="container-hover" class="container-hover">
-            <div class="container-icon">
-                <img id="${id}" src="./img/icon-download.png" alt="icon" class="icon-gifo">
-                <img id="${id}" src="./img/icon-fav.png" alt="icon" class="icon-gifo fav">
-                <img  id="${id}" src="./img/icon-max-normal.png" alt="icon" class="icon-gifo extend">
-            </div>
-            <div class="container-desc">
-                <p class="gif-user">${user}</p>
+        card.innerHTML = `<div id="container-hover" class="container-hover">
+        <div class="container-icon">
+        <a href="${download}" target="_blank" > <img id="${id}" src="./img/icon-download.svg" alt="icon" class="download"></a>
+            <img id="${id}" src="./img/icon-trash-normal.svg" alt="icon" class="icon-gifo fav">
+            <img  id="${id}" src="./img/icon-max-normal.svg" alt="icon" class="icon-gifo extend">
+        </div>
+        <div class="container-desc">
+            <p class="gif-user">${user}</p>
             <p class="gif-title">${gifoName}</p>
-            </div>
-            </div>
-            <img class="gifo-trend" id="${id}" src="${src}" alt="${gifoName}"/>`
+        </div>
+        </div>
+       <img id="${id}" class="gifo-search" src="${src}" alt="${gifoName}">`
 
-        card.addEventListener("mouseover", () => {
-            card.firstElementChild.style.display = "flex";
-        })
-        card.addEventListener("mouseout", () => {
-            card.firstElementChild.style.display = "none";
-        })
-        scrollfav.appendChild(card);
-        scrollfav.querySelectorAll('.scroll img').forEach((img) => {
-        img.addEventListener('click', onGifClick, false);
-    });
+        
+        favContainer.appendChild(card);
+       
+            
+           document.querySelectorAll('.extend').forEach((img) => {
+            img.addEventListener('click', onGifClick, false);
+        });
+        
         let unselect = document.getElementsByClassName("icon-gifo fav");
         for (let i = 0; i < unselect.length; i++) {
             const element = unselect[i];
@@ -388,6 +448,8 @@ async function muestraFavoritos(params) {
     }
 
 }
+ muestraFavoritos()
+
 function eliminarFav(id) {
     let deleteId = id;
     let favGuardados = JSON.parse(localStorage.getItem("favoritos"));
@@ -401,3 +463,16 @@ function eliminarFav(id) {
         }
     }
 }
+
+
+// Mig Gifos
+    let misGuifos = document.getElementById('misGifos');
+    let btnMisGifos = document.getElementById('btnMisGifos');
+    let favBlock = document.getElementById('favBlock')
+
+    btnMisGifos.addEventListener('click', ()=>{
+        misGuifos.style.display ='block'
+        favBlock.style.display = 'none'
+        document.getElementById("favoritesSect").style.display = "none";
+    })
+

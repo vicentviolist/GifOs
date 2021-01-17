@@ -1,0 +1,9 @@
+<svg id="icon-fav-hover-2" data-name="icon-fav-hover" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="icon-fav-hover" d="M8.444,15.671,1.5,8.723A5.11,5.11,0,0,1,8.723,1.5L9,1.774,9.277,1.5A5.11,5.11,0,1,1,16.5,8.723L9.555,15.671a.786.786,0,0,1-1.111,0Z" transform="translate(7 8)" fill="#572ee5"/>
+    </clipPath>
+  </defs>
+  <rect id="Rectangle_Copy_7" data-name="Rectangle Copy 7" width="32" height="32" rx="6" fill="#fff"/>
+  <path id="icon-fav-hover-3" data-name="icon-fav-hover" d="M8.444,15.671,1.5,8.723A5.11,5.11,0,0,1,8.723,1.5L9,1.774,9.277,1.5A5.11,5.11,0,1,1,16.5,8.723L9.555,15.671a.786.786,0,0,1-1.111,0Z" transform="translate(7 8)" fill="#572ee5"/>
+</svg>

@@ -29,7 +29,7 @@
                 <li><a class="menu-options-links" id="favoritos" href="#Favoritos">Favoritos</a></li>
                 <hr>
                 <li>
-                    <a class="menu-options-links" href="https://giphy.com/channel/vicentviolist">Mis Gifos</a>
+                    <a class="menu-options-links" id="btnMisGifos">Mis Gifos</a>
                 </li>
                 <hr>
                 <li>
@@ -70,7 +70,7 @@
             </div>
             <h2 id="resultadosh1" class="resultadosh1"></h2>
             <div class="p-10">
-                <div class="resultados" id="resultados"></div>
+                <div class="gifo-container" id="resultados"></div>
                 <div class="ver-mas">
                     <button id="btnvermas" class="btnvermas-hide">ver más</button>
                 </div>
@@ -81,23 +81,35 @@
         <div class="fav-Container">
             <img src="./img/Fill 1.svg" alt="Icono favoritos" id="favorites-icon" class="favorites-icon" />
                 <h1 id="favorites-title" class="favorites-title">Favoritos</h1> 
-           <!--  <img src="./img/icon-fav-sin-contenido.svg" alt="Icono favoritos sin contenido" class="nofav"
+             <img src="./img/icon-fav-sin-contenido.svg" alt="Icono favoritos sin contenido" class="nofav"
                 id="fav-no-content" class="fav-no-content" />
-            <h3 id="text-fav-sc">"¡Guarda tu primer GIFO en Favoritos para que se muestre aqui!"</h3> -->
+            <h3 id="text-fav-sc">"¡Guarda tu primer GIFO en Favoritos para que se muestre aqui!"</h3> 
+            <div id="gifo-container-fav" class="gifo-container">
+            
+            </div>
             <div class="scrollfav" id="scrollfav">
                <!-- Aqui iran los gif en fav -->
             </div>
         </div>
     </div>
+    <div id="misGifos" class="misGifos">
+        <h1>Hola</h1>
+    </div>
     <section class="trending-gif">
         <div>
+           
+            
+            </div>
             <h2>Trending GIFOS</h2>
             <p>Mira los últimos</p>
             <p>GIFOS de nuestra comunidad.</p>
         </div>
-
-        <div class="scroll" id="tendenciasscroll">
-            <!-- Aquí vendran los gis en tendencias -->
+        <div class="slider">
+            <img src="./img/button-slider-left.svg" id="btn-slide1" class="btn-btnSlide"  alt="">
+            <div class="scroll" id="tendenciasscroll">
+                <!-- Aquí vendran los gis en tendencias -->
+            </div>
+            <img src="./img/button-slider-right.svg" id="btn-slide2" class="btn-btnSlide2"alt="">
         </div>
     </section>
 

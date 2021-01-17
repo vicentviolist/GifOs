@@ -79,6 +79,7 @@ body {
   letter-spacing: 0;
   text-align: center;
   text-decoration: none;
+  cursor: pointer;
 }
 .burger-close {
   display: none;
@@ -426,6 +427,7 @@ i {
   align-items: center;
   flex-direction: column;
 }
+// MODAL
 .modal {
   display: none;
   flex-direction: column;
@@ -487,6 +489,7 @@ i {
     height: 40px;
   }
 }
+// Hover de las cards
 .gifo-container {
   display: flex;
   flex-flow: row wrap;
@@ -506,17 +509,24 @@ i {
 
 .container-hover {
   display: flex;
-
+  z-index: -9;
   flex-flow: column nowrap;
   justify-content: space-between;
   height: 197px;
   width: 243px;
   &:hover {
     background-color: rgba(74, 30, 227, 0.4);
+    .container-icon {
+      z-index: 60;
+    }
+    .container-desc {
+      z-index: 3;
+    }
   }
 }
 .container-icon {
   display: flex;
+  z-index: -3;
   flex-flow: row nowrap;
   justify-content: flex-end;
 }
@@ -536,6 +546,7 @@ i {
   font-weight: 500;
   text-align: left;
   padding-left: 5px;
+  z-index: -3;
   p {
     font-size: 13px;
     line-height: 20px;
@@ -549,6 +560,38 @@ i {
   width: 243px;
   height: 197px;
   z-index: -1;
+}
+.gifo-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  padding: 0 4%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.gifo-search {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 243px;
+  height: 197px;
+  z-index: -1;
+}
+.gifo-favv {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .card-gifo-carousel {
   position: relative;
@@ -625,12 +668,19 @@ i {
   padding: 0px 0px 0px 0px;
   height: 110%;
   margin: 0px 0px 0px 0px;
+  body.dark & {
+    border: 2px solid white;
+  }
   input {
     height: 35px;
     width: 80%;
     text-align: center;
     border: 0;
     margin-left: 30px;
+    body.dark & {
+      color: white;
+      background-color: $gris;
+    }
   }
 }
 .search-container {
@@ -725,4 +775,14 @@ i {
   height: 100%;
   position: relative;
   top: -347px;
+}
+.btn-btnSlide {
+  display: none;
+}
+.btn-btnSlide2 {
+  display: none;
+}
+
+.misGifos {
+  display: none;
 }
