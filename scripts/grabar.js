@@ -10,18 +10,79 @@ let recorder = null;
 let form = new FormData();
 let myGifs = [];
 let creados = document.getElementById('creados')
-const apikey = 'wioJ8mi8wlULE7hExqq9lNJTkDcbiZqB'; 
+let apikey = 'wioJ8mi8wlULE7hExqq9lNJTkDcbiZqB'; 
 let pathUpload = `https://upload.giphy.com/v1/gifs?api_key=${apikey}` 
+ 
+// Paso uno
+btnEmpezar.style.display = 'none'
 let paso1 = document.getElementById('recording-center')
+let btnpaso1 = document.getElementById('btnPaso1')
+let btn1hover = document.getElementById('btn1Hover')
+let btn1 = document.getElementById('btn1')
+btn1hover.style.display = 'none'
+btnpaso1.addEventListener('click', () =>{
+    paso1.style.display = 'none'
+    btnpaso1.style.display = 'none'
+    btnEmpezar.style.display = 'block'
+    paso2.style.display = 'flex'
+    btn1hover.style.display = 'block'
+    btn1.style.display = 'none'
+})
+
+function myFunction() {
+  myVar = setTimeout(cambio, 9000);
+}
+function cambio() {
+  subiendoGifo.style.display = 'none'
+  GifoSubido.style.display = 'flex'
+}
+
+// Paso dos
+let paso2 = document.getElementById('recording-center-paso2');
+paso2.style.display = 'none'
+let btn2 = document.getElementById('btn2');
+let btn2Hover = document.getElementById('btn2Hover');
+
+btn2Hover.style.display = 'none'
 
 function cronometrar() {
     h = 0;
     m = 0;
     s = -1;
-    document.getElementById("tiempo-repetir").innerHTML = "00:00:00";
-    escribir();
+    document.getElementById("Contador").innerHTML = "00:00:00";
+    tiempo();
     id = setInterval(escribir, 1000);
 }
+
+// paso 3
+let subiendoGifo = document.getElementById('subiendoGifo')
+subiendoGifo.style.display = 'none'
+
+let btn3Hover = document.getElementById('btn3Hover')
+let btn3 = document.getElementById('btn3')
+btn3Hover.style.display = 'none'
+btnSubir.addEventListener('click', () =>{
+    mostrarGif.style.display = 'none'
+    btnSubir.style.display ='none'
+    subiendoGifo.style.display = 'flex'
+    btn3Hover.style.display = 'block'
+    btn3.style.display = 'none'
+    btn2.style.display = 'block'
+    btn2Hover.style.display = 'none'
+    myFunction()
+    
+})
+
+
+// Subiendo Gifo
+
+let GifoSubido = document.getElementById('GifoSubido')
+GifoSubido.style.display = 'none'
+
+
+
+
+
 
 window.onload = function () {
     let gifs = JSON.parse(localStorage.getItem('myGifs'));
@@ -34,9 +95,14 @@ window.onload = function () {
 
 btnEmpezar.addEventListener('click', () => {
     getStreamAndRecord();
+    btn1hover.style.display = 'none'
+    btn2.style.display = 'none'
+    btn2Hover.style.display = 'block'
+    btn1.style.display = 'block'
     btnEmpezar.style.display = "none";
     paso1.style.display = "none";
     btnTerminar.style.display = "block";
+    paso2.style.display = "none";
 });
 
 btnTerminar.addEventListener('click', () => {
@@ -73,7 +139,7 @@ function getStreamAndRecord() {
                 type: 'gif',
                 frameRate: 1,
                 quality: 10,
-                width: 360,
+                width: 370,
                 hidden: 240,
                 onGifRecordingStarted: function () {
                     console.log('started')
@@ -85,14 +151,31 @@ function getStreamAndRecord() {
             console.log('error', err);
         });
 }
+function tiempo() {
+    var hAux, mAux, sAux;
+    s++;
+    if (s > 59) {
+        m++;
+        s = 0;
+    }
+    if (m > 59) {
+        h++;
+        m = 0;
+    }
+    if (h > 24) { h = 0; }
+    if (s < 10) { sAux = "0" + s; } else { sAux = s; }
+    if (m < 10) { mAux = "0" + m; } else { mAux = m; }
+    if (h < 10) { hAux = "0" + h; } else { hAux = h; }
+    document.getElementById("tiempo-repetir").innerHTML = hAux + ":" + mAux + ":" + sAux;
+}
 
 
 async function createGif(formData) {
-    const response = await fetch(pathUpload, {
+    let response = await fetch(pathUpload, {
         method: 'POST',
         body: formData
     }); 
-    const json = await response.json();
+    let json = await response.json();
     console.log(json.data.id, 'Aqui');
     return json.data.id;
 }
@@ -103,26 +186,3 @@ btnGuardar.addEventListener('click' , () => {
         `;
 }) 
 
-btnSubir.addEventListener('click', () =>{
-    btnSubir.style.display ='none'
-    let finGrabar = document.getElementById('finGrabar')
-    creados.innerHTML += `<h2>Gif subido</h2>`
-})
-let modoNocturno = document.getElementById('modoNocturno');
-let body = document.getElementsByName('body')
-let logo = document.getElementById('logobox')
-
-modoNocturno.addEventListener('click',() => {
-    if (document.body.className === 'dark') {
-        document.body.classList.toggle('dark')
-        modoNocturno.innerHTML =`<div>Modo Nocturno</div>`
-        logo.innerHTML = ` <a href="./index.html"><img class="logo" id="logo" src="./img/Logo.png" alt="Gifoslogo" /></a>`
-        
-    } else {
-        document.body.classList.toggle('dark')
-        console.log('Cambio de tema');
-        modoNocturno.innerHTML =`<div>Modo Diurno</div>`
-        logo.innerHTML = `<a href="./index.html"><img class="logo" id="logo" src="./img/LogoMobile.svg" alt="Gifoslogo" /> </a>`
-    }
-    
-})

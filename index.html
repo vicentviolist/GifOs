@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIFOS</title>
     <link rel="stylesheet" href="./sass/style.css">
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
@@ -13,8 +14,8 @@
     <script src="https://kit.fontawesome.com/912872772e.js" crossorigin="anonymous"></script>
 </head>
 
-<body name='body'>
-    <section>
+<body>
+    <div>
         <div class="fondo"></div>
         <nav class="nav-bar">
             <div id="logobox">
@@ -33,13 +34,13 @@
                 </li>
                 <hr>
                 <li>
-                    <a class="btn-grabar" href="./grabargif.html"><img src="./img/CTA-crar-gifo.svg" alt="Grabar"></a>
+                    <a class="btn-grabar" id="grabarLink"><img src="./img/CTA-crar-gifo.svg" alt="Grabar"></a>
                 </li>
             </ul>
             <label for="chk-nav-bar" id="burger-close" class="burger-close"><span>&#x2716;</span></label>
             <label for="chk-nav-bar" id="burger-open"><span class="hamburger">☰</span></label>
         </nav>
-    </section>
+    </div>
     <div id="favBlock">
         <div class="desaparecer" id="desaparecer">
             <div class="inspirate-box" id="searchImg">
@@ -50,68 +51,152 @@
             </div>
             <div id="searchImg1"> <img class='searchImg' src="./img/ilustra_header.png" alt=""></div>
         </div>
-        <section class="search">
+        <div class="search">
             <div class="searcher-placer">
                 <div id="search-container">
                     <img src="./img/icon-search.svg" id="lupa-izq" alt="buscar" class="lupa">
-                    <input  id="search-input" placeholder="Busca GIFOS y más" style="outline: none" type="text">
+                    <input id="search-input" placeholder="Busca GIFOS y más" style="outline: none" type="text">
                     <img src="./img/icon-search.svg" id="lupa-close" class="lupa-der" alt="buscar">
                 </div>
                 <div id="sugerencias">
-                
+
                 </div>
                 <img class="searchbtn" id="searchBtn" src="./img/icon-search.svg" style="display: none;" alt="">
             </div>
-        </section>
-        <section>
+        </div>
+        <div>
             <div class="trending-main" id="trending">
                 <h3>Trending:</h3>
                 <p id="p-textodeTenencias" class="main-description"></p>
             </div>
-            <h2 id="resultadosh1" class="resultadosh1"></h2>
+            <h2 id="resultadosh1" class="resultadosh1">Aqui va resultado</h2>
             <div class="p-10">
                 <div class="gifo-container" id="resultados"></div>
                 <div class="ver-mas">
                     <button id="btnvermas" class="btnvermas-hide">ver más</button>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+
+
+    <div id="contGrabar">
+        <div class="box-camera">
+            <div class="camera">
+                <img src="./img/camara.svg" alt="">
+                <img class="ligth" src="./img/Path2.svg" alt="ligth">
+            </div>
+            <div class="grabar-b">
+                <div class="finGrabar" id="finGrabar">
+                    <div class="paso1" id="recording-center">
+                        <div class="esquinas">
+                            <img src="./img/Path3.svg" class="absolute esquina1" style="height: 40px;"
+                                alt="esquinaIzquierdaArriba">
+                            <img src="./img/Path3Copy.svg" class="absolute esquina2" style="height: 40px;"
+                                alt="esquinaIzquierdaAbajo">
+                            <img src="./img/Path3Copy4.svg" class="absolute esquina3" style="height: 40px;"
+                                alt="esquinaDerechaArriba">
+                            <img src="./img/Path3Copy5.svg" class="absolute esquina4" style="height: 40px;"
+                                alt="esquinaderechaAbajo">
+                        </div>
+                        <div class=".parrafos">
+                            <p id="instructive">Aquí podrás<br />crear tus propios <span id="gifos-celeste">GIFOS</span>
+                            </p>
+                            <p id="detail" class="textoColor">¡Crea tu GIFO en sólo 3 pasos!<br />(sólo necesitas una
+                                cámara para grabar un
+                                video)</p>
+                        </div>
+                    </div>
+                    <div class="paso2" id="recording-center-paso2">
+                        <h2  style="color:  #572ee5;">¿Nos das acceso a tu camara?</h2>
+                        <p  style="margin-top: 5px;">El acceso a tu camara sera valido solo <br /> por el
+                            tiempo en
+                            el que estes creando el GIFO</p>
+                    </div>
+                    <div class="paso3" id="subiendoGifo">
+                        <img src="./img/loader.svg" alt="">
+                        <p>Estamos subiendo tu GIFO</p>
+                    </div>
+                    <div class="paso3" id="GifoSubido">
+                        <img src="./img/ok.svg" alt="">
+                        <p>GIFO subido con exito</p>
+                    </div>
+                    <video id="video"></video>
+                    <img id="mostrarGif" style="display: none;" alt="ImagenDeGifPropio" src="#">
+                </div>
+            </div>
+        </div>
+        <div class="btns">
+            <img class="btn" src="./img/paso-a-paso.svg" id="btn1" alt="BotoNumeroUno">
+            <img class="btn" src="./img/paso-a-paso.png" id="btn1Hover" alt="BotonNumero1Hover">
+            <img class="btn" src="./img/paso-a-pasocopy.svg" id="btn2" alt="btn2">
+            <img class="btn" src="./img/paso-a-pasocopy.PNG" id="btn2Hover" alt="btn2Hover">
+            <img class="btn" src="./img/paso-a-pasocopy2.svg" id="btn3" alt="btn3">
+            <img class="btn" src="./img/paso-a-pasocopy2.png" id="btn3Hover" alt="btn3Hover">
+            <div id="contador"></div>
+        </div>
+        <div class="creados" id="creados"></div>
+        <div class="hrbox">
+            <hr class="hrm">
+        </div>
+        <div class="comenzar-box">
+            <button class="btnStatic" id="btnPaso1">
+                Comenzar
+            </button>
+            <button class="btnStatic" id="empezar">
+                GRABAR
+            </button>
+            <button id="terminar" class="btnTerminar">
+                FINALIZAR
+            </button>
+            <button class="btnGuardar" id="btnGuardar">
+                GUARDAR
+            </button>
+            <button class="btnGuardar" id="btnSubir">
+                SUBIR GIFO
+            </button>
+        </div>
+        <div>
+            <img class="pelicula" src="./img/pelicula.svg" alt="">
+        </div>
     </div>
     <div id="favoritesSect" class="favoritesSect">
         <div class="fav-Container">
-            <img src="./img/Fill 1.svg" alt="Icono favoritos" id="favorites-icon" class="favorites-icon" />
-                <h1 id="favorites-title" class="favorites-title">Favoritos</h1> 
-             <img src="./img/icon-fav-sin-contenido.svg" alt="Icono favoritos sin contenido" class="nofav"
+            <img src="./img/Fill1.svg" alt="Icono favoritos" id="favorites-icon" class="favorites-icon" />
+            <h1 id="favorites-title" class="favorites-title">Favoritos</h1>
+            <img src="./img/icon-fav-sin-contenido.svg" alt="Icono favoritos sin contenido"
                 id="fav-no-content" class="fav-no-content" />
-            <h3 id="text-fav-sc">"¡Guarda tu primer GIFO en Favoritos para que se muestre aqui!"</h3> 
+            <h3 id="text-fav-sc">"¡Guarda tu primer GIFO en Favoritos para que se muestre aqui!"</h3>
             <div id="gifo-container-fav" class="gifo-container">
-            
+
             </div>
             <div class="scrollfav" id="scrollfav">
-               <!-- Aqui iran los gif en fav -->
+                <!-- Aqui iran los gif en fav -->
             </div>
         </div>
     </div>
     <div id="misGifos" class="misGifos">
-        <h1>Hola</h1>
+        <img src="./img/Fill1.png" alt="caritaFav">
+        <h2>Mis GIFOS</h2>
+        <div class="misGifsOp" id="misGifsOp">
+            <h2>¡Animate a crear tu propio GIFO!</h2>
+        </div>
+        <div class="gifo-container" id="gifo-container-own"></div>
     </div>
-    <section class="trending-gif">
-        <div>
-           
-            
-            </div>
-            <h2>Trending GIFOS</h2>
-            <p>Mira los últimos</p>
-            <p>GIFOS de nuestra comunidad.</p>
+    <div class="trending-gif">
+       
+        <h2>Trending GIFOS</h2>
+        <p>Mira los últimos</p>
+        <p>GIFOS de nuestra comunidad.</p>
+    </div>
+    <div class="slider bgTen">
+        <img src="./img/button-slider-left.svg" id="btn-slide1" class="btn-btnSlide" alt="">
+        <div class="scroll" id="tendenciasscroll">
+            <!-- Aquí vendran los gis en tendencias -->
         </div>
-        <div class="slider">
-            <img src="./img/button-slider-left.svg" id="btn-slide1" class="btn-btnSlide"  alt="">
-            <div class="scroll" id="tendenciasscroll">
-                <!-- Aquí vendran los gis en tendencias -->
-            </div>
-            <img src="./img/button-slider-right.svg" id="btn-slide2" class="btn-btnSlide2"alt="">
-        </div>
-    </section>
+        <img src="./img/button-slider-right.svg" id="btn-slide2" class="btn-btnSlide2" alt="">
+    </div>
+    
 
     <footer class="footer">
         <div class="row">
@@ -120,18 +205,18 @@
             </h4>
             <div class="icons">
                 <div>
-                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></a></i>
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
                 </div>
                 <div>
                     <a href="https://twitter.com/?lang=es">
                         <i class="fab fa-twitter"></i>
+                    </a>
                 </div>
-                </a>
                 <div>
                     <a href="https://www.instagram.com/?hl=es-la">
                         <i class="fab fa-instagram"></i>
+                    </a>
                 </div>
-                </a>
             </div>
         </div>
         <p>© GIFOS 2020 All Rights Reserved.</p>
@@ -154,6 +239,7 @@
             </div>
         </div>
     </div>
+    <script src="./scripts/grabar.js"></script>
     <script src="./scripts/app.js"></script>
 </body>
 

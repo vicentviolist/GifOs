@@ -1,20 +1,20 @@
-const apikey = 'wioJ8mi8wlULE7hExqq9lNJTkDcbiZqB';
-const pathTendencias = `https://api.giphy.com/v1/gifs/trending?api_key=${apikey}&limit=7`;
+/* let apikey = 'wioJ8mi8wlULE7hExqq9lNJTkDcbiZqB'; */
+let pathTendencias = `https://api.giphy.com/v1/gifs/trending?api_key=${apikey}&limit=7`;
 let gifosBuscados = 12;
 
 // Para cargar el texto en trending y cargar las tendencias a la seccion de carrousel
 async function getGiftsByText(campo, offset) {
-    const pathBusqueda = `https://api.giphy.com/v1/gifs/search?api_key=${apikey}&limit=${gifosBuscados}&q=${campo}&offset=${offset}&rating=g&lang=es`;
-    const response = await fetch(pathBusqueda);
-    const gifs = await response.json();
+    let pathBusqueda = `https://api.giphy.com/v1/gifs/search?api_key=${apikey}&limit=${gifosBuscados}&q=${campo}&offset=${offset}&rating=g&lang=es`;
+    let response = await fetch(pathBusqueda);
+    let gifs = await response.json();
     let download = gifs.bitly_url;
     return gifs.data;
 }
 let tendencias = document.getElementById('tendencias');
 async function cargarTendencias() {
     // utilizamos fetch y recibimos los datos para hacerlos .json
-    const response = await fetch(pathTendencias);
-    const tendencias = await response.json();
+    let response = await fetch(pathTendencias);
+    let tendencias = await response.json();
     return tendencias.data;
     
 }      
@@ -110,10 +110,10 @@ searchBtn.addEventListener('click', () => {
 
 async function buscarGif() {
     let campo = search.value;
-    const pathBusqueda = `https://api.giphy.com/v1/gifs/search?api_key=${apikey}&limit=${gifosBuscados}&q=${campo}`;
-    const respuesta = await fetch(pathBusqueda);
+    let pathBusqueda = `https://api.giphy.com/v1/gifs/search?api_key=${apikey}&limit=${gifosBuscados}&q=${campo}`;
+    let respuesta = await fetch(pathBusqueda);
     console.log(respuesta);
-    const json = await respuesta.json();
+    let json = await respuesta.json();
     console.log(json);
     let gifts = await getGiftsByText(search.value, 0);
     if (json.data.length === 0){
@@ -224,9 +224,9 @@ lupaIzq.addEventListener('click', () =>{
     }
 })
 async function llamaSugerencias() {
-    const busqueda = search.value;
+    let busqueda = search.value;
     let apikey = 'wioJ8mi8wlULE7hExqq9lNJTkDcbiZqB';
-    const path = `https://api.giphy.com/v1/gifs/search/tags?api_key=${apikey}&q=${busqueda}&limit=4&offset=0&rating=g&lang=en`;
+    let path = `https://api.giphy.com/v1/gifs/search/tags?api_key=${apikey}&q=${busqueda}&limit=4&offset=0&rating=g&lang=en`;
     let llamado = await fetch(path);
     let json = await llamado.json();
     sugerencias.innerHTML = " ";
@@ -236,7 +236,7 @@ async function llamaSugerencias() {
     contenedor.innerHTML = `<hr class="hrop">`;
     contenedor.style.cursor = "pointer";
     for (let i = 0; i < json.data.length; i++) {
-        const element = json.data[i];
+        let element = json.data[i];
         let id = i;
         let sugerencia = document.createElement("p");
         sugerencia.className = "suggestion"
@@ -246,7 +246,7 @@ async function llamaSugerencias() {
     sugerencias.appendChild(contenedor);
     let select = document.getElementsByClassName("suggest"); 
     for (let i = 0; i < select.length; i++) {
-        const element = select[i];
+        let element = select[i];
         element.addEventListener("mouseover", () => {
             event.target.style.color = "#0078d7";
         })
@@ -308,9 +308,9 @@ modoNocturno.addEventListener('click',() => {
 
 // ventana modal
 async function getGifById(id) {
-    const pathBusqueda = `https://api.giphy.com/v1/gifs/${id}?api_key=${apikey}`;
-    const response = await fetch(pathBusqueda);
-    const gif = await response.json();
+    let pathBusqueda = `https://api.giphy.com/v1/gifs/${id}?api_key=${apikey}`;
+    let response = await fetch(pathBusqueda);
+    let gif = await response.json();
     return gif.data;
 }
 let downloadGi = document.querySelectorAll('.download');
@@ -344,6 +344,7 @@ modal.addEventListener('click', (e) => {
 });
 
 
+
 // PARA GUARDAR FAVORITOS
 let favorites = []
 
@@ -353,13 +354,14 @@ function favoritos() {
     document.getElementById("favBlock").style.display = "none";
     document.getElementById("favoritesSect").style.display = "block";
     misGuifos.style.display = "none";
+    contGrabar.style.display = 'none'
     
 }
 
 function guardarFavorito() {
     let favIcon = document.getElementsByClassName("icon-gifo fav");
     for (let i = 0; i < favIcon.length; i++) {
-        const element = favIcon[i];
+        let element = favIcon[i];
         if (localStorage.getItem("favoritos", JSON.stringify(favorites))) {
             favorites= JSON.parse(localStorage.getItem("favoritos"));
         }
@@ -402,7 +404,7 @@ async function muestraFavoritos(params) {
     }
      
     for (let i = 0; i < favorites.length; i++) {
-        const element = favorites[i];
+        let element = favorites[i];
         let apikey = 'wioJ8mi8wlULE7hExqq9lNJTkDcbiZqB';
         let path = `https://api.giphy.com/v1/gifs?api_key=${apikey}&ids=${element}`;
         let llamado = await fetch(path);
@@ -439,7 +441,7 @@ async function muestraFavoritos(params) {
         
         let unselect = document.getElementsByClassName("icon-gifo fav");
         for (let i = 0; i < unselect.length; i++) {
-            const element = unselect[i];
+            let element = unselect[i];
             element.addEventListener("click", () => {
                 let id = event.target.id;
                 eliminarFav(id);
@@ -454,7 +456,7 @@ function eliminarFav(id) {
     let deleteId = id;
     let favGuardados = JSON.parse(localStorage.getItem("favoritos"));
     for (let i = 0; i < favGuardados.length; i++) {
-        const element = favGuardados[i];
+        let element = favGuardados[i];
         if (deleteId === element) {
             let indice = favGuardados.indexOf(element);
             favGuardados.splice(indice, 1);
@@ -471,8 +473,114 @@ function eliminarFav(id) {
     let favBlock = document.getElementById('favBlock')
 
     btnMisGifos.addEventListener('click', ()=>{
-        misGuifos.style.display ='block'
+        misGuifos.style.display ='flex'
         favBlock.style.display = 'none'
+        contGrabar.style.display = 'none'
         document.getElementById("favoritesSect").style.display = "none";
     })
+    let grabarLink = document.getElementById('grabarLink')
+    let contGrabar = document.getElementById('contGrabar')
+    contGrabar.style.display = 'none'
+    // Para mostrar los favoritos
+    
+var gifContainer = document.getElementById("gifo-container-own");
+grabarLink.addEventListener('click', ()=>{
+        misGuifos.style.display ='none'
+        favBlock.style.display = 'none'
+        contGrabar.style.display = 'block'
+        document.getElementById("favoritesSect").style.display = "none";
+    })
+
+muestraMisGif();
+// con esta funcion consultamos el localstorage y mostramos los gif guardados
+async function muestraMisGif() {
+    gifContainer.innerHTML = "";
+    let misGIFOS = JSON.parse(localStorage.getItem("myGifs"));
+    // verificamos si hay algun gif guardado para poner icono
+     /* if (misGIFOS === null) {
+        let misGifsOp = document.getElementById("misGifsOp");
+         misGifsOp.style.display = 'flex'
+    }  */
+    console.log(misGIFOS);
+    for (let i = 0; i < misGIFOS.length; i++) {
+        let element = misGIFOS[i];
+        let path = `https://api.giphy.com/v1/gifs?api_key=3cqcb8LEg33MtM0vWp2nMTE6iMswMXML&ids=${element}`;
+        let llamado = await fetch(path);
+        let json = await llamado.json();
+        let elemento = json.data[0];
+        let src = elemento.images.fixed_width.url;
+        let download = elemento.bitly_url;
+        let gifoName = elemento.title;
+        let user = elemento.username;
+        let id = elemento.id;
+        let card = document.createElement("div");
+        card.id = "card-gifo"
+        card.className = "card-gifo"
+        card.innerHTML = `<div id="container-hover" class="container-hover">
+        <div class="container-icon">
+        <a href="${download}" target="_blank" ><img id="${id}" src="./img/icon-download.svg" alt="icon" class="icon-gifo down"></a>
+            <img id="${id}" src="./img/icon-trash-normal.svg" alt="icon" class="icon-gifo trash">
+            <img id="${id}" src="./img/icon-max-normal.svg" alt="icon" class="icon-gifo extend">
+        </div>
+        <div class="container-desc">
+            <p class="gif-user">${user}</p>
+            <p class="gif-title">${gifoName}</p>
+        </div>
+        </div>
+       <img id="${id}" class="gifo-trend" src="${src}" alt="${gifoName}">`
+
+        card.addEventListener("mouseover", () => {
+            card.firstElementChild.style.display = "flex";
+        })
+        card.addEventListener("mouseout", () => {
+            card.firstElementChild.style.display = "none";
+        })
+        gifContainer.appendChild(card);
+         
+           document.querySelectorAll('.extend').forEach((img) => {
+            img.addEventListener('click', onGifClick, false);
+        });
+        let trashCan = document.querySelectorAll(".trash");
+
+        for (let i = 0; i < trashCan.length; i++) {
+            let element = trashCan[i];
+            element.addEventListener("click", () => {
+                let id = event.target.id;
+                deleteGif(id);
+
+            })
+        }
+        // let unselect = document.getElementsByClassName("icon-gifo fav");
+        // console.log(unselect);
+        // for (let i = 0; i < unselect.length; i++) {
+        //     let element = unselect[i];
+        //     element.addEventListener("click", () => {
+        //         let id = event.target.id;
+        //         eliminarFav(id);
+        //         console.log(`aqui`);
+        //         console.log(id);
+        //     })
+        // }
+    }
+}
+
+let misGifsOp = document.getElementById("misGifsOp")
+misGifsOp.style.display ='none'
+
+function deleteGif(params) {
+    let deleteId = params;
+    let misGIFOS = JSON.parse(localStorage.getItem("myGifs"));
+    for (let i = 0; i < misGIFOS.length; i++) {
+        let element = misGIFOS[i];
+        if (deleteId === element) {
+            let indice = misGIFOS.indexOf(element);
+            console.log(indice);
+            misGIFOS.splice(indice, 1);
+            localStorage.setItem("myGifs", JSON.stringify(misGIFOS));
+            muestraMisGif();
+        }
+    }
+}
+
+
 

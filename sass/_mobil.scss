@@ -203,7 +203,16 @@ main .main-description {
 .btnvermas-hide {
   display: none;
 }
-
+.misGifos {
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #572ee5;
+  body.dark & {
+    color: white;
+  }
+}
 .btnvermas-show {
   display: block;
   font-family: "Montserrat", sans-serif;
@@ -221,6 +230,11 @@ main .main-description {
     border: 1px solid white;
   }
 }
+.paso2 {
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 100px;
+}
 .btnTerminar {
   display: none;
   font-family: "Montserrat", sans-serif;
@@ -233,6 +247,27 @@ main .main-description {
   padding: 10px;
   border-radius: 114px 114px 114px 114px;
   outline: none;
+  body.dark & {
+    color: white;
+    border: 1px solid white;
+  }
+}
+.btnTerminar:hover {
+  display: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0;
+  text-align: center;
+  border: 1px solid #572ee5;
+  color: white;
+  background: #572ee5;
+  padding: 10px;
+  border-radius: 114px 114px 114px 114px;
+  outline: none;
+  body.dark & {
+    background-color: white;
+    color: #000000;
+  }
 }
 .btnGuardar {
   display: none;
@@ -360,6 +395,12 @@ main .main-description {
   text-align: center;
   display: flex;
   flex-direction: column;
+  body.dark & {
+    background-color: $negro;
+  }
+}
+.bgTen {
+  background: #f3f5f8;
   body.dark & {
     background-color: $negro;
   }
@@ -601,6 +642,15 @@ i {
 }
 .favoritesSect {
   display: none;
+}
+.favoritesSect .fav-Container .gifo-container .gifo-search {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 243px;
+  height: 197px;
+  z-index: -1;
+  margin: 0 0 0 0;
 }
 
 // Para favoritos

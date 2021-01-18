@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="55.53" height="51" viewBox="0 0 55.53 51">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Clip_3" data-name="Clip 3" d="M0,0H47.692V20.313H0Z" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="logo-mobile-modo-noct" transform="translate(0 0)">
+    <g id="Group_5" data-name="Group 5" transform="translate(0 0)">
+      <path id="Fill_1" data-name="Fill 1" d="M0,0V50.783H48.792V39.9H45.306v7.255H3.485V3.627H34.851V14.509H45.306v7.255h3.485V10.882L38.336,0Z" fill="#5ed7c6"/>
+      <g id="Group_4" data-name="Group 4" transform="translate(7.837 17.635)">
+        <path id="Clip_3-2" data-name="Clip 3" d="M0,0H47.692V20.313H0Z" transform="translate(0 0)" fill="none"/>
+        <g id="Group_4-2" data-name="Group 4" transform="translate(0 0)" clip-path="url(#clip-path)">
+          <text id="GIFOS" transform="translate(0.163 1.878)" fill="#fff" font-size="16" font-family="Roboto-Black, Roboto" font-weight="800"><tspan x="0" y="17">GIFOS</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

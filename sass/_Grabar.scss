@@ -7,6 +7,9 @@
     justify-content: center;
     height: 390px;
     width: 640px;
+    body.dark & {
+      border: 2px solid white;
+    }
   }
   .box-camera {
     margin-top: 30px;
@@ -42,10 +45,13 @@
     width: 795.9px;
     background-color: #572ee5;
     margin-top: 10px;
+    body.dark & {
+      background-color: white;
+    }
   }
   .pelicula {
     position: absolute;
-    margin-left: 1280px;
+    margin-left: 1090px;
     margin-top: -150px;
   }
   .comenzar-box {
@@ -54,6 +60,30 @@
     justify-content: center;
     :hover {
       cursor: pointer;
+    }
+  }
+  .btnStatic {
+    font-family: "Montserrat", Bold;
+    font-size: 13px;
+    letter-spacing: 0;
+    text-align: center;
+    border: 1px solid #572ee5;
+    color: #572ee5;
+    background: none;
+    padding: 10px;
+    border-radius: 114px 114px 114px 114px;
+    outline: none;
+    body.dark & {
+      color: white;
+      border: 1px solid white;
+    }
+  }
+  .btnStatic:hover {
+    background: #572ee5;
+    color: white;
+    body.dark & {
+      background: white;
+      color: black;
     }
   }
   .btnComenzar {
@@ -73,5 +103,52 @@
     align-items: center;
     color: #572ee5;
     justify-content: center;
+  }
+  .paso2 {
+    width: 70%;
+    margin-left: 100px;
+  }
+  .paso3 {
+    height: 320px;
+    width: 430px;
+    background-color: #572ee5;
+    opacity: 0.6;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img {
+      margin-bottom: 10px;
+    }
+  }
+  .absolute {
+    position: absolute;
+  }
+  .esquina1 {
+    margin-left: -470px;
+    margin-top: -15px;
+  }
+  .esquina2 {
+    margin-top: -15;
+    margin-left: 70px;
+  }
+  .esquina3 {
+    margin-left: -470px;
+    margin-top: 290px;
+  }
+  .esquina4 {
+    margin-top: 290px;
+    margin-left: 70px;
+  }
+  .paso2 {
+    display: flex;
+    text-align: center;
+  }
+  .textoColor {
+    color: aqua;
+    body.dark & {
+      color: white;
+    }
   }
 }

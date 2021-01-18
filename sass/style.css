@@ -253,6 +253,26 @@ main .main-description {
   display: none;
 }
 
+.misGifos {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #572ee5;
+}
+
+body.dark .misGifos {
+  color: white;
+}
+
 .btnvermas-show {
   display: block;
   font-family: "Montserrat", sans-serif;
@@ -272,6 +292,17 @@ body.dark .btnvermas-show {
   border: 1px solid white;
 }
 
+.paso2 {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 100px;
+}
+
 .btnTerminar {
   display: none;
   font-family: "Montserrat", sans-serif;
@@ -284,6 +315,30 @@ body.dark .btnvermas-show {
   padding: 10px;
   border-radius: 114px 114px 114px 114px;
   outline: none;
+}
+
+body.dark .btnTerminar {
+  color: white;
+  border: 1px solid white;
+}
+
+.btnTerminar:hover {
+  display: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0;
+  text-align: center;
+  border: 1px solid #572ee5;
+  color: white;
+  background: #572ee5;
+  padding: 10px;
+  border-radius: 114px 114px 114px 114px;
+  outline: none;
+}
+
+body.dark .btnTerminar:hover {
+  background-color: white;
+  color: #000000;
 }
 
 .btnGuardar {
@@ -450,6 +505,14 @@ body.dark .trending-main {
 }
 
 body.dark .trending-gif {
+  background-color: #222326;
+}
+
+.bgTen {
+  background: #f3f5f8;
+}
+
+body.dark .bgTen {
   background-color: #222326;
 }
 
@@ -784,6 +847,16 @@ i {
 
 .favoritesSect {
   display: none;
+}
+
+.favoritesSect .fav-Container .gifo-container .gifo-search {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 243px;
+  height: 197px;
+  z-index: -1;
+  margin: 0 0 0 0;
 }
 
 .fav-Container {
@@ -1394,6 +1467,15 @@ body.dark .searcher-placer input {
     margin: 33px;
     z-index: 2;
   }
+  .favoritesSect .fav-Container .gifo-container .gifo-search {
+    position: absolute;
+    margin: 0 0 0 0;
+    width: 357px;
+    height: 275px;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -1410,6 +1492,9 @@ body.dark .searcher-placer input {
             justify-content: center;
     height: 390px;
     width: 640px;
+  }
+  body.dark .grabar-b {
+    border: 2px solid white;
   }
   .box-camera {
     margin-top: 30px;
@@ -1462,9 +1547,12 @@ body.dark .searcher-placer input {
     background-color: #572ee5;
     margin-top: 10px;
   }
+  body.dark .hrbox hr {
+    background-color: white;
+  }
   .pelicula {
     position: absolute;
-    margin-left: 1280px;
+    margin-left: 1090px;
     margin-top: -150px;
   }
   .comenzar-box {
@@ -1478,6 +1566,30 @@ body.dark .searcher-placer input {
   }
   .comenzar-box :hover {
     cursor: pointer;
+  }
+  .btnStatic {
+    font-family: "Montserrat", Bold;
+    font-size: 13px;
+    letter-spacing: 0;
+    text-align: center;
+    border: 1px solid #572ee5;
+    color: #572ee5;
+    background: none;
+    padding: 10px;
+    border-radius: 114px 114px 114px 114px;
+    outline: none;
+  }
+  body.dark .btnStatic {
+    color: white;
+    border: 1px solid white;
+  }
+  .btnStatic:hover {
+    background: #572ee5;
+    color: white;
+  }
+  body.dark .btnStatic:hover {
+    background: white;
+    color: black;
   }
   .btnComenzar {
     font-family: "Montserrat", Bold;
@@ -1502,6 +1614,64 @@ body.dark .searcher-placer input {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+  .paso2 {
+    width: 70%;
+    margin-left: 100px;
+  }
+  .paso3 {
+    height: 320px;
+    width: 430px;
+    background-color: #572ee5;
+    opacity: 0.6;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: white;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .paso3 img {
+    margin-bottom: 10px;
+  }
+  .absolute {
+    position: absolute;
+  }
+  .esquina1 {
+    margin-left: -470px;
+    margin-top: -15px;
+  }
+  .esquina2 {
+    margin-top: -15;
+    margin-left: 70px;
+  }
+  .esquina3 {
+    margin-left: -470px;
+    margin-top: 290px;
+  }
+  .esquina4 {
+    margin-top: 290px;
+    margin-left: 70px;
+  }
+  .paso2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+  }
+  .textoColor {
+    color: aqua;
+  }
+  body.dark .textoColor {
+    color: white;
   }
 }
 /*# sourceMappingURL=style.css.map */

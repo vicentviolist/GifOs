@@ -1,0 +1,14 @@
+<svg id="Button-close-modo-noc" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Combined_Shape" data-name="Combined Shape" d="M12.293,13.707,7,8.414,1.707,13.707A1,1,0,0,1,.293,12.293L5.586,7,.293,1.707A1,1,0,0,1,1.707.293L7,5.586,12.293.293a1,1,0,0,1,1.414,1.415L8.414,7l5.293,5.293a1,1,0,1,1-1.414,1.414Z" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="Rectangle_Copy_8" data-name="Rectangle Copy 8" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1">
+    <rect width="40" height="40" stroke="none"/>
+    <rect x="0.5" y="0.5" width="39" height="39" fill="none"/>
+  </g>
+  <g id="close" transform="translate(13 13)">
+    <path id="Combined_Shape-2" data-name="Combined Shape" d="M12.293,13.707,7,8.414,1.707,13.707A1,1,0,0,1,.293,12.293L5.586,7,.293,1.707A1,1,0,0,1,1.707.293L7,5.586,12.293.293a1,1,0,0,1,1.414,1.415L8.414,7l5.293,5.293a1,1,0,1,1-1.414,1.414Z" fill="#fff"/>
+  </g>
+</svg>

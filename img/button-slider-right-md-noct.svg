@@ -1,0 +1,19 @@
+<svg id="button-slider-right-md-noct" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Shape" d="M5.586,7,.293,12.293a1,1,0,0,0,1.414,1.414l6-6a1,1,0,0,0,0-1.414l-6-6A1,1,0,0,0,.293,1.707Z"/>
+    </clipPath>
+  </defs>
+  <g id="Rectangle" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1">
+    <rect width="40" height="40" stroke="none"/>
+    <rect x="0.5" y="0.5" width="39" height="39" fill="none"/>
+  </g>
+  <g id="right" transform="translate(16 13)">
+    <path id="Shape-2" data-name="Shape" d="M5.586,7,.293,12.293a1,1,0,0,0,1.414,1.414l6-6a1,1,0,0,0,0-1.414l-6-6A1,1,0,0,0,.293,1.707Z"/>
+    <g id="right-2" data-name="right" clip-path="url(#clip-path)">
+      <g id="COLOR_black" data-name="COLOR/ black" transform="translate(-8 -5)">
+        <rect id="Rectangle-2" data-name="Rectangle" width="24" height="24" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>
