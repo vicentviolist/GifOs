@@ -504,7 +504,7 @@ async function muestraMisGif() {
     console.log(misGIFOS);
     for (let i = 0; i < misGIFOS.length; i++) {
         const element = misGIFOS[i];
-        const path = `https://api.giphy.com/v1/gifs?api_key=3cqcb8LEg33MtM0vWp2nMTE6iMswMXML&ids=${element}`;
+        const path = `https://api.giphy.com/v1/gifs?api_key=wioJ8mi8wlULE7hExqq9lNJTkDcbiZqB&ids=${element}`;
          let llamado = await fetch(path);
         let json = await llamado.json();
         let elemento = json.data[0];
