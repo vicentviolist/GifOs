@@ -1,20 +1,20 @@
-/* let apikey = 'wioJ8mi8wlULE7hExqq9lNJTkDcbiZqB'; */
+
 let pathTendencias = `https://api.giphy.com/v1/gifs/trending?api_key=${apikey}&limit=7`;
 let gifosBuscados = 12;
 
 // Para cargar el texto en trending y cargar las tendencias a la seccion de carrousel
 async function getGiftsByText(campo, offset) {
-    let pathBusqueda = `https://api.giphy.com/v1/gifs/search?api_key=${apikey}&limit=${gifosBuscados}&q=${campo}&offset=${offset}&rating=g&lang=es`;
-    let response = await fetch(pathBusqueda);
-    let gifs = await response.json();
+    const pathBusqueda = `https://api.giphy.com/v1/gifs/search?api_key=${apikey}&limit=${gifosBuscados}&q=${campo}&offset=${offset}&rating=g&lang=es`;
+    const response = await fetch(pathBusqueda);
+    const gifs = await response.json();
     let download = gifs.bitly_url;
     return gifs.data;
 }
 let tendencias = document.getElementById('tendencias');
 async function cargarTendencias() {
     // utilizamos fetch y recibimos los datos para hacerlos .json
-    let response = await fetch(pathTendencias);
-    let tendencias = await response.json();
+    const response = await fetch(pathTendencias);
+    const tendencias = await response.json();
     return tendencias.data;
     
 }      
@@ -110,10 +110,10 @@ searchBtn.addEventListener('click', () => {
 
 async function buscarGif() {
     let campo = search.value;
-    let pathBusqueda = `https://api.giphy.com/v1/gifs/search?api_key=${apikey}&limit=${gifosBuscados}&q=${campo}`;
-    let respuesta = await fetch(pathBusqueda);
+    const pathBusqueda = `https://api.giphy.com/v1/gifs/search?api_key=${apikey}&limit=${gifosBuscados}&q=${campo}`;
+    const respuesta = await fetch(pathBusqueda);
     console.log(respuesta);
-    let json = await respuesta.json();
+    const json = await respuesta.json();
     console.log(json);
     let gifts = await getGiftsByText(search.value, 0);
     if (json.data.length === 0){
@@ -224,9 +224,9 @@ lupaIzq.addEventListener('click', () =>{
     }
 })
 async function llamaSugerencias() {
-    let busqueda = search.value;
+    const busqueda = search.value;
     let apikey = 'wioJ8mi8wlULE7hExqq9lNJTkDcbiZqB';
-    let path = `https://api.giphy.com/v1/gifs/search/tags?api_key=${apikey}&q=${busqueda}&limit=4&offset=0&rating=g&lang=en`;
+    const path = `https://api.giphy.com/v1/gifs/search/tags?api_key=${apikey}&q=${busqueda}&limit=4&offset=0&rating=g&lang=en`;
     let llamado = await fetch(path);
     let json = await llamado.json();
     sugerencias.innerHTML = " ";
@@ -246,7 +246,7 @@ async function llamaSugerencias() {
     sugerencias.appendChild(contenedor);
     let select = document.getElementsByClassName("suggest"); 
     for (let i = 0; i < select.length; i++) {
-        let element = select[i];
+        const element = select[i];
         element.addEventListener("mouseover", () => {
             event.target.style.color = "#0078d7";
         })
@@ -308,9 +308,9 @@ modoNocturno.addEventListener('click',() => {
 
 // ventana modal
 async function getGifById(id) {
-    let pathBusqueda = `https://api.giphy.com/v1/gifs/${id}?api_key=${apikey}`;
-    let response = await fetch(pathBusqueda);
-    let gif = await response.json();
+    const pathBusqueda = `https://api.giphy.com/v1/gifs/${id}?api_key=${apikey}`;
+    const response = await fetch(pathBusqueda);
+    const gif = await response.json();
     return gif.data;
 }
 let downloadGi = document.querySelectorAll('.download');
@@ -361,7 +361,7 @@ function favoritos() {
 function guardarFavorito() {
     let favIcon = document.getElementsByClassName("icon-gifo fav");
     for (let i = 0; i < favIcon.length; i++) {
-        let element = favIcon[i];
+        const element = favIcon[i];
         if (localStorage.getItem("favoritos", JSON.stringify(favorites))) {
             favorites= JSON.parse(localStorage.getItem("favoritos"));
         }
@@ -404,7 +404,7 @@ async function muestraFavoritos(params) {
     }
      
     for (let i = 0; i < favorites.length; i++) {
-        let element = favorites[i];
+        const element = favorites[i];
         let apikey = 'wioJ8mi8wlULE7hExqq9lNJTkDcbiZqB';
         let path = `https://api.giphy.com/v1/gifs?api_key=${apikey}&ids=${element}`;
         let llamado = await fetch(path);
@@ -441,7 +441,7 @@ async function muestraFavoritos(params) {
         
         let unselect = document.getElementsByClassName("icon-gifo fav");
         for (let i = 0; i < unselect.length; i++) {
-            let element = unselect[i];
+            const element = unselect[i];
             element.addEventListener("click", () => {
                 let id = event.target.id;
                 eliminarFav(id);
@@ -456,7 +456,7 @@ function eliminarFav(id) {
     let deleteId = id;
     let favGuardados = JSON.parse(localStorage.getItem("favoritos"));
     for (let i = 0; i < favGuardados.length; i++) {
-        let element = favGuardados[i];
+        const element = favGuardados[i];
         if (deleteId === element) {
             let indice = favGuardados.indexOf(element);
             favGuardados.splice(indice, 1);
@@ -503,9 +503,9 @@ async function muestraMisGif() {
     }  */
     console.log(misGIFOS);
     for (let i = 0; i < misGIFOS.length; i++) {
-        let element = misGIFOS[i];
-        let path = `https://api.giphy.com/v1/gifs?api_key=3cqcb8LEg33MtM0vWp2nMTE6iMswMXML&ids=${element}`;
-        let llamado = await fetch(path);
+        const element = misGIFOS[i];
+        const path = `https://api.giphy.com/v1/gifs?api_key=3cqcb8LEg33MtM0vWp2nMTE6iMswMXML&ids=${element}`;
+         let llamado = await fetch(path);
         let json = await llamado.json();
         let elemento = json.data[0];
         let src = elemento.images.fixed_width.url;
@@ -543,7 +543,7 @@ async function muestraMisGif() {
         let trashCan = document.querySelectorAll(".trash");
 
         for (let i = 0; i < trashCan.length; i++) {
-            let element = trashCan[i];
+            const element = trashCan[i];
             element.addEventListener("click", () => {
                 let id = event.target.id;
                 deleteGif(id);

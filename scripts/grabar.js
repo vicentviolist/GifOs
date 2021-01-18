@@ -10,7 +10,7 @@ let recorder = null;
 let form = new FormData();
 let myGifs = [];
 let creados = document.getElementById('creados')
-let apikey = 'wioJ8mi8wlULE7hExqq9lNJTkDcbiZqB'; 
+const apikey = 'wioJ8mi8wlULE7hExqq9lNJTkDcbiZqB'; 
 let pathUpload = `https://upload.giphy.com/v1/gifs?api_key=${apikey}` 
  
 // Paso uno
@@ -84,7 +84,7 @@ GifoSubido.style.display = 'none'
 
 
 
-window.onload = function () {
+function lola() {
     let gifs = JSON.parse(localStorage.getItem('myGifs'));
     if (gifs) {
         myGifs = gifs;
@@ -92,7 +92,7 @@ window.onload = function () {
     console.log('Mis gifs cargados', myGifs);
 }
 
-
+lola()
 btnEmpezar.addEventListener('click', () => {
     getStreamAndRecord();
     btn1hover.style.display = 'none'
@@ -171,11 +171,11 @@ function tiempo() {
 
 
 async function createGif(formData) {
-    let response = await fetch(pathUpload, {
+    const response = await fetch(pathUpload, {
         method: 'POST',
         body: formData
     }); 
-    let json = await response.json();
+    const json = await response.json();
     console.log(json.data.id, 'Aqui');
     return json.data.id;
 }
