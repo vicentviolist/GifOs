@@ -355,6 +355,7 @@ function favoritos() {
     document.getElementById("favoritesSect").style.display = "block";
     misGuifos.style.display = "none";
     contGrabar.style.display = 'none'
+    muestraFavoritos()
     
 }
 
@@ -477,6 +478,7 @@ function eliminarFav(id) {
         favBlock.style.display = 'none'
         contGrabar.style.display = 'none'
         document.getElementById("favoritesSect").style.display = "none";
+        muestraMisGif()
     })
     let grabarLink = document.getElementById('grabarLink')
     let contGrabar = document.getElementById('contGrabar')
@@ -491,20 +493,20 @@ grabarLink.addEventListener('click', ()=>{
         document.getElementById("favoritesSect").style.display = "none";
     })
 
-muestraMisGif();
+
 // con esta funcion consultamos el localstorage y mostramos los gif guardados
 async function muestraMisGif() {
     gifContainer.innerHTML = "";
     let misGIFOS = JSON.parse(localStorage.getItem("myGifs"));
     // verificamos si hay algun gif guardado para poner icono
-     /* if (misGIFOS === null) {
+     if (misGIFOS === null) {
         let misGifsOp = document.getElementById("misGifsOp");
          misGifsOp.style.display = 'flex'
-    }  */
+    } 
     console.log(misGIFOS);
     for (let i = 0; i < misGIFOS.length; i++) {
         const element = misGIFOS[i];
-        const path = `https://api.giphy.com/v1/gifs?api_key=wioJ8mi8wlULE7hExqq9lNJTkDcbiZqB&ids=${element}`;
+        let path = `https://api.giphy.com/v1/gifs?api_key=wioJ8mi8wlULE7hExqq9lNJTkDcbiZqB&ids=${element}`;
          let llamado = await fetch(path);
         let json = await llamado.json();
         let elemento = json.data[0];
