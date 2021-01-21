@@ -1,4 +1,3 @@
-
 let pathTendencias = `https://api.giphy.com/v1/gifs/trending?api_key=${apikey}&limit=7`;
 let gifosBuscados = 12;
 
@@ -16,8 +15,8 @@ async function cargarTendencias() {
     const response = await fetch(pathTendencias);
     const tendencias = await response.json();
     return tendencias.data;
-    
-}      
+
+}
 
 window.onload = function () {
     invocarTendencias();
@@ -28,15 +27,14 @@ async function invocarTendencias() {
     let trendings = await cargarTendencias();
     textoTendencias.innerHTML = '';
     tendenciasscroll.innerHTML = '';
-    
+
     trendings.forEach((t, i) => {
         textoTendencias.innerHTML += t.title +
-        (i === trendings.length - 1 ? '' : ', ');
+            (i === trendings.length - 1 ? '' : ', ');
         let card = document.createElement("div");
         let download = t.bitly_url;
         card.className = "card-gifo"
         card.innerHTML = `
-
         <div id="container-hover" class="container-hover">
             <div class="container-icon">
                <a href="${download}" target="_blank" >  <img id="${t.id}" src="./img/icon-download.svg" alt="icon" class="icon-gifo download"> </a>
@@ -48,19 +46,19 @@ async function invocarTendencias() {
             </div>
             </div>
             <img class="gifo-trend" id="${t.id}" src="${t.images.fixed_height.url}" alt="${t.title}"/>`
-        
+
         tendenciasscroll.appendChild(card);
-});
+    });
     tendenciasscroll.querySelectorAll('.extend').forEach((img) => {
         img.addEventListener('click', onGifClick, false);
     });
     tendenciasscroll.querySelectorAll('.download').forEach((img) => {
-        img.addEventListener('click',  downloadGifclick, false);
+        img.addEventListener('click', downloadGifclick, false);
     });
     guardarFavorito()
 }
 
- 
+
 
 // Aquí es para realizar las busqudas
 let resultado = document.getElementById('resultados');
@@ -74,36 +72,36 @@ let desaparecer = document.getElementById('desaparecer')
 
 search.addEventListener('keyup', (e) => {
     if (e.key === 'Enter') {
-            buscarGif();
-            desaparecer.style.display = "none"
-             lupaDer.src = "./img/close.svg";
-    lupaDer.style.width = '18px';
-    lupaDer.style.height = '18px';
-    lupaIzq.style.display = "block";
-    sugerencias.innerHTML = " ";
-    sugerencias.style.display = "block";
-            
-    }if(search.value <= 1){
+        buscarGif();
+        desaparecer.style.display = "none"
+        lupaDer.src = "./img/close.svg";
+        lupaDer.style.width = '18px';
+        lupaDer.style.height = '18px';
+        lupaIzq.style.display = "block";
+        sugerencias.innerHTML = " ";
+        sugerencias.style.display = "block";
+
+    } if (search.value <= 1) {
         desaparecer.style.display = "flex"
-    }if(search.value <= 1){
+    } if (search.value <= 1) {
         resultadoh1.innerHTML = '';
-         resultado.innerHTML = '';
-         btnvermas.style.display ='none'
+        resultado.innerHTML = '';
+        btnvermas.style.display = 'none'
     }
 });
 search.addEventListener('keyup', () => {
     if ('keyup') {
-            llamaSugerencias()
-            desaparecer.style.display = "none"
-    }if(search.value <= 1){
+        llamaSugerencias()
+        desaparecer.style.display = "none"
+    } if (search.value <= 1) {
         desaparecer.style.display = "flex"
     }
 });
 searchBtn.addEventListener('click', () => {
     if ('click') {
-            buscarGif();
-            desaparecer.style.display = "none"
-    }if(search.value <= 1){
+        buscarGif();
+        desaparecer.style.display = "none"
+    } if (search.value <= 1) {
         desaparecer.style.display = "flex"
     }
 });
@@ -116,12 +114,12 @@ async function buscarGif() {
     const json = await respuesta.json();
     console.log(json);
     let gifts = await getGiftsByText(search.value, 0);
-    if (json.data.length === 0){
+    if (json.data.length === 0) {
         resultadoh1.innerHTML = '';
-         resultado.innerHTML = '';
-         btnvermas.classList.add('btnvermas-hide')
-         btnvermas.style.display = 'none'
-            resultadoh1.innerHTML += `
+        resultado.innerHTML = '';
+        btnvermas.classList.add('btnvermas-hide')
+        btnvermas.style.display = 'none'
+        resultadoh1.innerHTML += `
             <div class="hrResBox">
                 <hr class="hrRes">
                 <h1 class="h1resultadobusqueda">Lorem Impsu</h1>
@@ -136,12 +134,12 @@ async function buscarGif() {
         resultado.innerHTML = '';
         btnvermas.classList.add('btnvermas-show')
         btnvermas.style.display = 'block'
-            gifts.forEach((gift) => {
-                
-         let card = document.createElement("div");
-         let download = gift.bitly_url;
-        card.className = "card-gifo"
-        card.innerHTML = ` <div id="container-hover" class="container-hover">
+        gifts.forEach((gift) => {
+
+            let card = document.createElement("div");
+            let download = gift.bitly_url;
+            card.className = "card-gifo"
+            card.innerHTML = ` <div id="container-hover" class="container-hover">
             <div class="container-icon">
               <a href='${download}'>  <img id="${gift.id}" src="./img/icon-download.png" alt="icon" class="icon-gifo"></a>
                 <img id="${gift.id}" src="./img/icon-fav.png" alt="icon" class="icon-gifo fav">
@@ -153,7 +151,7 @@ async function buscarGif() {
             </div>
             <img class="gifo-search" id="${gift.id}" src="${gift.images.fixed_height_small.url}" alt="${gift.title}"/>
             `;
-             resultado.appendChild(card);
+            resultado.appendChild(card);
         });
         document.querySelectorAll('.extend').forEach((img) => {
             img.addEventListener('click', onGifClick, false);
@@ -162,8 +160,8 @@ async function buscarGif() {
     guardarFavorito()
 }
 // Para realizar el slide con los
- let btnslide1 =  document.getElementById('btn-slide1');
- let btnslide2 =  document.getElementById('btn-slide2');
+let btnslide1 = document.getElementById('btn-slide1');
+let btnslide2 = document.getElementById('btn-slide2');
 btnslide1.addEventListener('mouseover', () => {
     btnslide1.src = "./img/button-slider-left-hover.svg"
 });
@@ -207,19 +205,19 @@ btnvermas.addEventListener("click", () => {
             console.log(error);
         }
     }
-})  
+})
 
 // Funcion para auto contemplado
 let sugerencias = document.getElementById('sugerencias');
 let lupaDer = document.getElementById("lupa-close");
 let lupaIzq = document.getElementById("lupa-izq");
-lupaIzq.addEventListener('click', () =>{
-     if ('click') {
-            buscarGif();
-             contenedor = document.getElementById("opciones");
-    contenedor.innerHTML = " ";
-            desaparecer.style.display = "none"
-    }if(search.value <= 1){
+lupaIzq.addEventListener('click', () => {
+    if ('click') {
+        buscarGif();
+        contenedor = document.getElementById("opciones");
+        contenedor.innerHTML = " ";
+        desaparecer.style.display = "none"
+    } if (search.value <= 1) {
         desaparecer.style.display = "flex"
     }
 })
@@ -244,7 +242,7 @@ async function llamaSugerencias() {
         contenedor.appendChild(sugerencia);
     }
     sugerencias.appendChild(contenedor);
-    let select = document.getElementsByClassName("suggest"); 
+    let select = document.getElementsByClassName("suggest");
     for (let i = 0; i < select.length; i++) {
         const element = select[i];
         element.addEventListener("mouseover", () => {
@@ -253,7 +251,7 @@ async function llamaSugerencias() {
         element.addEventListener("click", () => {
             search.value = element.innerHTML;
             buscarGif();
-            contenedor.style.display="none";
+            contenedor.style.display = "none";
         })
     }
 }
@@ -277,10 +275,10 @@ lupaDer.addEventListener("click", () => {
     lupaIzq.style.display = 'none';
     resultadoh1.innerHTML = '';
     resultado.innerHTML = '';
-    btnvermas.style.display ='none'
+    btnvermas.style.display = 'none'
     desaparecer.style.display = "flex"
-    if(search.value <= 1){
-         contenedor.innerHTML = " ";
+    if (search.value <= 1) {
+        contenedor.innerHTML = " ";
     }
 
 })
@@ -290,19 +288,19 @@ let modoNocturno = document.getElementById('modoNocturno');
 let body = document.getElementsByName('body')
 let logo = document.getElementById('logobox')
 
-modoNocturno.addEventListener('click',() => {
+modoNocturno.addEventListener('click', () => {
     if (document.body.className === 'dark') {
         document.body.classList.toggle('dark')
-        modoNocturno.innerHTML =`<div>Modo Nocturno</div>`
+        modoNocturno.innerHTML = `<div>Modo Nocturno</div>`
         logo.innerHTML = `<a href="./index.html"> <img class="logo" id="logo" src="./img/Logo.png" alt="Gifoslogo" /> </a>`
-        
+
     } else {
         document.body.classList.toggle('dark')
         console.log('Cambio de tema');
-        modoNocturno.innerHTML =`<div>Modo Diurno</div>`
+        modoNocturno.innerHTML = `<div>Modo Diurno</div>`
         logo.innerHTML = `<a href="./index.html"><img class="logo" id="logo" src="./img/LogoMobile.svg" alt="Gifoslogo" /> </a>`
     }
-    
+
 })
 
 
@@ -314,7 +312,7 @@ async function getGifById(id) {
     return gif.data;
 }
 let downloadGi = document.querySelectorAll('.download');
-async function downloadGifclick(img){
+async function downloadGifclick(img) {
     let gifData = await getGifById(img.target.id);
     downloadGi.href = gifData.images.downsized.url;
 }
@@ -356,7 +354,7 @@ function favoritos() {
     misGuifos.style.display = "none";
     contGrabar.style.display = 'none'
     muestraFavoritos()
-    
+
 }
 
 function guardarFavorito() {
@@ -364,7 +362,7 @@ function guardarFavorito() {
     for (let i = 0; i < favIcon.length; i++) {
         const element = favIcon[i];
         if (localStorage.getItem("favoritos", JSON.stringify(favorites))) {
-            favorites= JSON.parse(localStorage.getItem("favoritos"));
+            favorites = JSON.parse(localStorage.getItem("favoritos"));
         }
         element.addEventListener("click", () => {
             let idFav = (event.target.id);
@@ -375,7 +373,7 @@ function guardarFavorito() {
             }
             element.src = "./img/icon-fav-hover.svg";
             localStorage.setItem("favoritos", JSON.stringify(favorites))
-            
+
         })
     }
 }
@@ -390,27 +388,27 @@ async function muestraFavoritos(params) {
     let favorites = JSON.parse(localStorage.getItem("favoritos"));
     // verificamos si hay algun gif guardado para poner icono
     if (favorites === null) {
-       console.log('No hay favoritos');
-       let favoritesIcon = document.getElementById('favorites-icon')
-       let favoritesTitle = document.getElementById('favorites-title')
-       favoritesIcon.style.display = 'none'
-       favoritesTitle.style.display = 'none'
-       console.log('No hay favoritos');
-    }else{
-       let textSinContenido = document.getElementById('text-fav-sc')
-       let favIconNoContent = document.getElementById('fav-no-content')
-       favIconNoContent.style.display = "none"
-       textSinContenido.style.display = 'none'
-       console.log('Si hay favoritos');
+        console.log('No hay favoritos');
+        let favoritesIcon = document.getElementById('favorites-icon')
+        let favoritesTitle = document.getElementById('favorites-title')
+        favoritesIcon.style.display = 'none'
+        favoritesTitle.style.display = 'none'
+        console.log('No hay favoritos');
+    } else {
+        let textSinContenido = document.getElementById('text-fav-sc')
+        let favIconNoContent = document.getElementById('fav-no-content')
+        favIconNoContent.style.display = "none"
+        textSinContenido.style.display = 'none'
+        console.log('Si hay favoritos');
     }
-     
+
     for (let i = 0; i < favorites.length; i++) {
         const element = favorites[i];
         let apikey = 'wioJ8mi8wlULE7hExqq9lNJTkDcbiZqB';
         let path = `https://api.giphy.com/v1/gifs?api_key=${apikey}&ids=${element}`;
         let llamado = await fetch(path);
         let json = await llamado.json();
-        let elemento = json.data[0]; 
+        let elemento = json.data[0];
         let src = elemento.images.fixed_width.url;
         let gifoName = elemento.title;
         let download = elemento.bitly_url;
@@ -432,14 +430,14 @@ async function muestraFavoritos(params) {
         </div>
        <img id="${id}" class="gifo-search" src="${src}" alt="${gifoName}">`
 
-        
+
         favContainer.appendChild(card);
-       
-            
-           document.querySelectorAll('.extend').forEach((img) => {
+
+
+        document.querySelectorAll('.extend').forEach((img) => {
             img.addEventListener('click', onGifClick, false);
         });
-        
+
         let unselect = document.getElementsByClassName("icon-gifo fav");
         for (let i = 0; i < unselect.length; i++) {
             const element = unselect[i];
@@ -451,7 +449,7 @@ async function muestraFavoritos(params) {
     }
 
 }
- muestraFavoritos()
+muestraFavoritos()
 
 function eliminarFav(id) {
     let deleteId = id;
@@ -469,29 +467,29 @@ function eliminarFav(id) {
 
 
 // Mig Gifos
-    let misGuifos = document.getElementById('misGifos');
-    let btnMisGifos = document.getElementById('btnMisGifos');
-    let favBlock = document.getElementById('favBlock')
+let misGuifos = document.getElementById('misGifos');
+let btnMisGifos = document.getElementById('btnMisGifos');
+let favBlock = document.getElementById('favBlock')
 
-    btnMisGifos.addEventListener('click', ()=>{
-        misGuifos.style.display ='flex'
-        favBlock.style.display = 'none'
-        contGrabar.style.display = 'none'
-        document.getElementById("favoritesSect").style.display = "none";
-        muestraMisGif()
-    })
-    let grabarLink = document.getElementById('grabarLink')
-    let contGrabar = document.getElementById('contGrabar')
+btnMisGifos.addEventListener('click', () => {
+    misGuifos.style.display = 'flex'
+    favBlock.style.display = 'none'
     contGrabar.style.display = 'none'
-    // Para mostrar los favoritos
-    
+    document.getElementById("favoritesSect").style.display = "none";
+    muestraMisGif()
+})
+let grabarLink = document.getElementById('grabarLink')
+let contGrabar = document.getElementById('contGrabar')
+contGrabar.style.display = 'none'
+// Para mostrar los favoritos
+
 var gifContainer = document.getElementById("gifo-container-own");
-grabarLink.addEventListener('click', ()=>{
-        misGuifos.style.display ='none'
-        favBlock.style.display = 'none'
-        contGrabar.style.display = 'block'
-        document.getElementById("favoritesSect").style.display = "none";
-    })
+grabarLink.addEventListener('click', () => {
+    misGuifos.style.display = 'none'
+    favBlock.style.display = 'none'
+    contGrabar.style.display = 'block'
+    document.getElementById("favoritesSect").style.display = "none";
+})
 
 
 // con esta funcion consultamos el localstorage y mostramos los gif guardados
@@ -499,15 +497,15 @@ async function muestraMisGif() {
     gifContainer.innerHTML = "";
     let misGIFOS = JSON.parse(localStorage.getItem("myGifs"));
     // verificamos si hay algun gif guardado para poner icono
-     if (misGIFOS === null) {
+    if (misGIFOS === null) {
         let misGifsOp = document.getElementById("misGifsOp");
-         misGifsOp.style.display = 'flex'
-    } 
+        misGifsOp.style.display = 'flex'
+    }
     console.log(misGIFOS);
     for (let i = 0; i < misGIFOS.length; i++) {
         const element = misGIFOS[i];
         let path = `https://api.giphy.com/v1/gifs?api_key=wioJ8mi8wlULE7hExqq9lNJTkDcbiZqB&ids=${element}`;
-         let llamado = await fetch(path);
+        let llamado = await fetch(path);
         let json = await llamado.json();
         let elemento = json.data[0];
         let src = elemento.images.fixed_width.url;
@@ -538,8 +536,8 @@ async function muestraMisGif() {
             card.firstElementChild.style.display = "none";
         })
         gifContainer.appendChild(card);
-         
-           document.querySelectorAll('.extend').forEach((img) => {
+
+        document.querySelectorAll('.extend').forEach((img) => {
             img.addEventListener('click', onGifClick, false);
         });
         let trashCan = document.querySelectorAll(".trash");
@@ -567,7 +565,7 @@ async function muestraMisGif() {
 }
 
 let misGifsOp = document.getElementById("misGifsOp")
-misGifsOp.style.display ='none'
+misGifsOp.style.display = 'none'
 
 function deleteGif(params) {
     let deleteId = params;
@@ -586,3 +584,17 @@ function deleteGif(params) {
 
 
 
+// Añade la funcion de descarga 
+
+/* let descargame = document.getElementById('descargame')
+
+   descargame.addEventListener("click", async function() {
+        let a = document.createElement("a");
+        let response = await fetch(url);
+        console.log(response);
+        let gif = await response.blob();
+        a.download = 'Gif';
+        a.href = window.URL.createObjectURL(gif);
+        a.dataset.downloadurl = ['application/octet-stream', a.download, a.href].join(':');
+        a.click();
+    }) */
